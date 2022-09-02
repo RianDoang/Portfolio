@@ -1,3 +1,5 @@
+const { format } = require("prettier");
+
 // Navbar Fixed
 window.onscroll = function () {
   const header = document.querySelector("header");
@@ -61,6 +63,8 @@ function sendMail(params) {
   };
 
   emailjs.send("service_ggpr0mm", "template_6khgdga", temParams).then(function (res) {
+    document.getElementById("myForm").reset();
+    alert("Pesan kamu sudah kami terima");
     console.log("success", res.status);
   });
 }
