@@ -1,5 +1,3 @@
-const { format } = require("prettier");
-
 // Navbar Fixed
 window.onscroll = function () {
   const header = document.querySelector("header");
