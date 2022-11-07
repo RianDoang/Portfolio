@@ -53,6 +53,8 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
   darkToggle.checked = false;
 }
 
+
+
 // function sendMail(params) {
 //   var temParams = {
 //     from_name: document.getElementById("email").value,
@@ -62,7 +64,6 @@ if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.match
 
 //   emailjs.send("service_ggpr0mm", "template_6khgdga", temParams).then(function (res) {
 //     document.getElementById("myForm").reset();
-//     alert("Pesan kamu sudah kami terima");
 //     console.log("success", res.status);
 //   });
 // }

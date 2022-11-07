@@ -45,7 +45,7 @@
       <div class="container">
         <div class="relative flex items-center justify-between">
           <div class="px-4">
-            <a href="#home" class="block py-6 text-lg font-bold text-primary">Just Ryan</a>
+            <a href="https://www.instagram.com/rynsyy_/" target="_blank" class="block py-6 text-lg font-bold text-primary">Just Ryan</a>
           </div>
           <div class="flex items-center px-4">
             <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
@@ -313,8 +313,8 @@
           </div>
         </div>
 
-        <div class="w-full lg:mx-auto lg:w-2/3 my-alert">
-          <div class="alert bg-green-200 rounded-lg py-5 px-6 mb-11 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show hidden" role="alert">
+        <div class="w-full lg:mx-auto lg:w-2/3">
+          <div class="alert bg-green-200 rounded-lg py-5 px-6 mb-11 text-base text-green-700 inline-flex items-center w-full alert-dismissible fade show my-alert hidden" role="alert">
             <strong class="mr-1">Terimakasih!</strong>Pesan kamu sudah aku terima.
               <button type="button" class="btn-close box-content w-5 h-6 p-1 ml-auto text-xl font-bold text-slate-800 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-slate-900 hover:opacity-75 hover:no-underline" data-bs-dismiss="alert" aria-label="Close">
                 X
@@ -338,15 +338,15 @@
           <div class="w-full lg:mx-auto lg:w-2/3">
             <div class="mb-8 w-full px-4">
               <label for="name" class="text-base font-bold text-primary">Nama</label>
-              <input type="text" id="name" class="w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" required />
+              <input type="text" id="name" name="nama" class="w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" required />
             </div>
             <div class="mb-8 w-full px-4">
               <label for="email" class="text-base font-bold text-primary">Email</label>
-              <input type="email" id="email" class="w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" required />
+              <input type="email" id="email" name="email" class="w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" required />
             </div>
             <div class="mb-8 w-full px-4">
-              <label for="message" class="text-base font-bold text-primary">Pesan</label>
-              <textarea type="email" id="message" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+              <label for="pesan" class="text-base font-bold text-primary">Pesan</label>
+              <textarea type="email" id="pesan" name="pesan" class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark transition duration-300 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
             </div>
             <div class="w-full px-4">
               <button class="w-full rounded-xl bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg btn-kirim" onclick="sendMail()">Kirim</button>
@@ -468,8 +468,11 @@
       <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
     </a>
 
+
     <script src="dist/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+    <!-- Form -->
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbw_6KZuJWCo03j8ynBD8iQxvt5mX9drm_N4yRSnXfVfBaBOyM9Lf2pMgOQeKL8TgXpoQg/exec";
       const form = document.forms["myForm"];
