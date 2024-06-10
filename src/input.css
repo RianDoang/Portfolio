@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+  @apply w-[26.5px];
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+  @apply w-[26.2px];
+}
+
+#primary {
+    @apply text-cyan-500
+}
