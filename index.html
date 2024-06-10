@@ -27,7 +27,6 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
-  
   </head>
   <body
     class="font-figtree bg-slate-900 text-slate-50 overflow-x-hidden h-[1000px]"
@@ -263,7 +262,9 @@
         <h1 class="text-3xl font-bold pb-5 text-center md:text-6xl">
           🚀Highlight Projects
         </h1>
-        <p class="w-[90%] text-center text-slate-500 pb-20 text-sm md:text-base md:w-1/2">
+        <p
+          class="w-[90%] text-center text-slate-500 pb-20 text-sm md:text-base md:w-1/2"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
           voluptate.
         </p>
@@ -392,7 +393,9 @@
       <h1 class="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl">
         🎯Specialized Skills
       </h1>
-      <p class="w-[95%] ml-4 text-slate-500 text-left pb-20 text-sm md:text-base md:ml-8 lg:w-1/2">
+      <p
+        class="w-[95%] ml-4 text-slate-500 text-left pb-20 text-sm md:text-base md:ml-8 lg:w-1/2"
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
         aspernatur. Eius earum animi dolores reprehenderit?
       </p>
@@ -555,7 +558,9 @@
         <h1 class="text-3xl font-bold text-center mb-5 md:text-6xl">
           🏢Work Experiences
         </h1>
-        <p class="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2">
+        <p
+          class="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sit
           voluptatibus, optio exercitationem fugiat vel!
         </p>
@@ -592,7 +597,9 @@
                 <h3 class="font-medium text-2xl">
                   The responsibilities include:
                 </h3>
-                <ul class="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug">
+                <ul
+                  class="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug"
+                >
                   <li>Create networks within the office</li>
                   <li>Carry out maintenance of office equipment</li>
                   <li>Analyze server hardware that is in trouble</li>
@@ -638,7 +645,9 @@
                 <h3 class="font-medium text-2xl">
                   The responsibilities include:
                 </h3>
-                <ul class="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug">
+                <ul
+                  class="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug"
+                >
                   <li>Carry out WiFi repairs for all rooms</li>
                   <li>Training is part of intelligence members</li>
                   <li>Help sort the suspect's track record files</li>
@@ -660,12 +669,55 @@
       <h1 class="text-3xl font-bold pb-5 text-center md:text-6xl">
         👋Let's get connected!
       </h1>
-      <p class="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2">
+      <p
+        class="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2"
+      >
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus,
         rem.
       </p>
 
       <form class="w-[90%] mx-auto">
+        <div
+          id="alertContact"
+          class="flex items-center justify-between bg-slate-700 w-[90%] lg:w-[72%] mx-auto py-3 px-5 mb-8 rounded text-green-500"
+        >
+          <div class="flex items-center gap-3">
+            <svg
+              class="flex-shrink-0 w-4 h-4"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+              />
+            </svg>
+            <span class="font-medium"
+              >Thank You! We have received your message.</span
+            >
+          </div>
+          <div
+            class="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-slate-600"
+            id="closeContact"
+          >
+            <svg
+              class="w-3 h-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+            </svg>
+          </div>
+        </div>
         <div class="w-full lg:mx-auto lg:w-3/4">
           <div class="mb-8 w-full px-4">
             <label for="name" class="text-base font-bold text-cyan-500"
@@ -674,6 +726,7 @@
             <input
               type="text"
               id="name"
+              spellcheck="false"
               class="w-full rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 mt-1"
               required
             />
@@ -685,6 +738,7 @@
             <input
               type="email"
               id="email"
+              spellcheck="false"
               class="w-full rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 mt-1"
               required
             />
@@ -696,6 +750,7 @@
             <textarea
               type="text"
               id="message"
+              spellcheck="false"
               class="h-40 w-full rounded-md bg-slate-200 p-3 text-slate-950 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary mt-1"
               required
             ></textarea>
@@ -703,9 +758,15 @@
           <div class="w-full px-4" id="btnKirim">
             <button
               type="submit"
-              class="btnKirim w-full rounded-full bg-cyan-500 py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+              class="btnKirim w-full rounded-full bg-cyan-500 h-12 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
             >
-              Send
+              <span id="teks1" class="transform">Send</span>
+              <span id="teks2" class="transform hidden opacity-hidden"
+                >Sending data...</span
+              >
+              <span id="teks3" class="transform hidden opacity-hidden"
+                >Your message has successfully landed🛬</span
+              >
             </button>
           </div>
         </div>
@@ -717,6 +778,16 @@
         ©️2024, by Muhamad Riansyah
       </p>
     </footer>
+
+    <!-- Back to top Start -->
+    <a
+      href="#"
+      class="fixed bottom-6 right-6 z-[9999] hidden h-12 w-12 items-center justify-center rounded bg-primary p-4 transition duration-200 bg-cyan-500 hover:bg-cyan-600 md:h-14 md:w-14"
+      id="to-top"
+    >
+      <span class="mt-2 block h-4 w-4 rotate-45 border-t-2 border-l-2"></span>
+    </a>
+    <!-- Back to top End -->
 
     <script src="src/script.js"></script>
   </body>

@@ -19,5 +19,40 @@
 }
 
 #primary {
-    @apply text-cyan-500
+  @apply text-cyan-500;
+}
+
+#alertContact {
+  transition: opacity 300ms ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Initial state for spans */
+span {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-out-up {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-in-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reset {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.opacity-hidden {
+  opacity: 0;
 }

@@ -86,20 +86,93 @@ window.addEventListener("click", function (e) {
 
 // Send to email
 function validate() {
+  //
+  let teks1 = document.getElementById("teks1");
+  let teks2 = document.getElementById("teks2");
+  let teks3 = document.getElementById("teks3");
+  // Data user
+  let alert = document.querySelector("#alertContact");
   let form = document.querySelector("form");
   let name = document.querySelector("#name");
   let email = document.querySelector("#email");
   let pesan = document.querySelector("#message");
   let btnKirim = document.querySelector(".btnKirim");
 
+  teks2.classList.add("reset", "hidden", "opacity-hidden");
+  teks3.classList.add("reset", "hidden", "opacity-hidden");
+
   btnKirim.addEventListener("click", function (e) {
     e.preventDefault();
     if (name.value == "" || email.value == "" || pesan.value == "") {
       inputempty();
     } else {
-      sendmail(name.value, email.value, pesan.value);
-      console.log("Pesan berhasil terkirim");
-      form.reset();
+      teks1.classList.add("fade-out-up");
+
+      setTimeout(() => {
+        teks1.classList.add("hidden");
+      }, 500);
+
+      setTimeout(() => {
+        teks2.classList.add("fade-in-down");
+        teks2.classList.remove("reset");
+        teks2.classList.remove("opacity-hidden");
+      }, 500);
+
+      setTimeout(() => {
+        teks2.classList.remove("hidden");
+      }, 200);
+
+      setTimeout(() => {
+        teks2.classList.remove("fade-in-down");
+        teks2.classList.add("fade-out-up");
+      }, 3000);
+
+      setTimeout(() => {
+        teks2.classList.add("hidden");
+      }, 3200);
+
+      setTimeout(() => {
+        teks3.classList.add("fade-in-down");
+        teks3.classList.remove("reset");
+        teks3.classList.remove("opacity-hidden");
+      }, 3400);
+
+      setTimeout(() => {
+        teks3.classList.remove("hidden");
+        //
+        // sendmail(name.value, email.value, pesan.value);
+        console.log("Pesan berhasil terkirim");
+        alert.classList.remove("hidden");
+        alert.classList.add("flex");
+        form.reset();
+      }, 3200);
+
+      setTimeout(() => {
+        teks3.classList.remove("fade-in-down");
+        teks3.classList.add("fade-out-up");
+      }, 4500);
+
+      setTimeout(() => {
+        teks1.classList.add("reset");
+        teks1.classList.add("hidden");
+        teks1.classList.add("opacity-hidden");
+      }, 4600);
+
+      setTimeout(() => {
+        teks1.classList.remove("reset");
+        teks1.classList.remove("opacity-hidden");
+      }, 4700);
+
+      setTimeout(() => {
+        teks3.classList.add("hidden");
+        teks1.classList.add("reset");
+        teks1.classList.remove("hidden");
+      }, 4800);
+
+      setTimeout(() => {
+        teks1.classList.remove("reset");
+        teks1.classList.add("fade-in-down");
+      }, 5100);
     }
   });
 }
@@ -112,3 +185,30 @@ function sendmail(name, email, pesan) {
     message: pesan,
   });
 }
+
+// Button to top
+window.onscroll = function () {
+  const header = document.querySelector("nav");
+  const fixedNav = header.offsetTop;
+  const toTop = document.querySelector("#to-top");
+
+  if (window.pageYOffset > fixedNav) {
+    header.classList.add("navbar-fixed");
+    toTop.classList.remove("hidden");
+    toTop.classList.add("flex");
+  } else {
+    header.classList.remove("navbar-fixed");
+    toTop.classList.remove("flex");
+    toTop.classList.add("hidden");
+  }
+};
+
+// Btn Close Alert Contact
+document.getElementById("closeContact").addEventListener("click", function () {
+  const alert = document.getElementById("alertContact");
+  alert.classList.add("fade-out");
+
+  setTimeout(() => {
+    alert.style.display = "none";
+  }, 300);
+});
