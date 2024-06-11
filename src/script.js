@@ -91,28 +91,81 @@ function validate() {
   let teks2 = document.getElementById("teks2");
   let teks3 = document.getElementById("teks3");
   // Data user
-  let alert = document.querySelector("#alertContact");
+  let alertSuccess = document.querySelector("#alertContactSuccess");
+  let alertError = document.querySelector("#alertContactError");
+  let alertErrorEmail = document.querySelector("#alertContactErrorEmail");
   let form = document.querySelector("form");
   let name = document.querySelector("#name");
   let email = document.querySelector("#email");
   let pesan = document.querySelector("#message");
   let btnKirim = document.querySelector(".btnKirim");
 
+  teks1.classList.add("fade-in-down");
   teks2.classList.add("reset", "hidden", "opacity-hidden");
   teks3.classList.add("reset", "hidden", "opacity-hidden");
 
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
   btnKirim.addEventListener("click", function (e) {
     e.preventDefault();
-    if (name.value == "" || email.value == "" || pesan.value == "") {
-      inputempty();
+
+    // Menyembunyikan semua alert sebelum menampilkan yang baru
+    alertError.classList.remove("flex");
+    alertError.classList.add("hidden");
+    alertErrorEmail.classList.remove("flex");
+    alertErrorEmail.classList.add("hidden");
+    alertSuccess.classList.remove("flex");
+    alertSuccess.classList.add("hidden");
+
+    if (name.value === "" || email.value === "" || pesan.value === "") {
+      // Tampilkan alertError jika ada input yang kosong
+      alertError.classList.remove("hidden");
+      alertError.classList.add("flex");
+
+      // Tambahkan border merah ke input yang kosong
+      if (name.value === "") {
+        name.classList.add("border-red-500");
+      } else {
+        name.classList.remove("border-red-500");
+      }
+
+      if (email.value === "") {
+        email.classList.add("border-red-500");
+      } else {
+        email.classList.remove("border-red-500");
+      }
+
+      if (pesan.value === "") {
+        pesan.classList.add("border-red-500");
+      } else {
+        pesan.classList.remove("border-red-500");
+      }
+    } else if (!isValidEmail(email.value)) {
+      // Tampilkan alertErrorEmail jika email tidak valid
+      alertErrorEmail.classList.remove("hidden");
+      alertErrorEmail.classList.add("flex");
+
+      // Tambahkan border merah ke input email jika email tidak valid
+      email.classList.add("border-red-500");
     } else {
+      // Reset borders jika input sudah benar
+      name.classList.remove("border-red-500");
+      email.classList.remove("border-red-500");
+      pesan.classList.remove("border-red-500");
+
+      //
       teks1.classList.add("fade-out-up");
+      teks1.classList.remove("fade-in-down");
 
       setTimeout(() => {
         teks1.classList.add("hidden");
       }, 500);
 
       setTimeout(() => {
+        teks1.classList.add("reset", "hidden", "opacity-hidden");
         teks2.classList.add("fade-in-down");
         teks2.classList.remove("reset");
         teks2.classList.remove("opacity-hidden");
@@ -125,27 +178,27 @@ function validate() {
       setTimeout(() => {
         teks2.classList.remove("fade-in-down");
         teks2.classList.add("fade-out-up");
-      }, 3000);
+      }, 3300);
 
       setTimeout(() => {
         teks2.classList.add("hidden");
-      }, 3200);
+      }, 3500);
 
       setTimeout(() => {
         teks3.classList.add("fade-in-down");
         teks3.classList.remove("reset");
         teks3.classList.remove("opacity-hidden");
-      }, 3400);
+      }, 3700);
 
       setTimeout(() => {
         teks3.classList.remove("hidden");
         //
         // sendmail(name.value, email.value, pesan.value);
         console.log("Pesan berhasil terkirim");
-        alert.classList.remove("hidden");
-        alert.classList.add("flex");
+        alertSuccess.classList.remove("hidden");
+        alertSuccess.classList.add("flex");
         form.reset();
-      }, 3200);
+      }, 3500);
 
       setTimeout(() => {
         teks3.classList.remove("fade-in-down");
@@ -172,7 +225,15 @@ function validate() {
       setTimeout(() => {
         teks1.classList.remove("reset");
         teks1.classList.add("fade-in-down");
-      }, 5100);
+      }, 4900);
+
+      setTimeout(() => {
+        teks1.classList.remove("fade-out-up");
+        teks2.classList.remove("fade-out-up");
+        teks2.classList.add("opacity-hidden", "reset");
+        teks3.classList.remove("fade-out-up");
+        teks3.classList.add("opacity-hidden", "reset");
+      }, 5000);
     }
   });
 }
@@ -185,6 +246,52 @@ function sendmail(name, email, pesan) {
     message: pesan,
   });
 }
+
+// Btn Close Alert Contact Success
+document
+  .getElementById("closeContactSuccess")
+  .addEventListener("click", function () {
+    const alert = document.getElementById("alertContactSuccess");
+    alert.classList.add("fade-out");
+
+    setTimeout(() => {
+      alert.classList.add("hidden");
+      alert.classList.remove("fade-out");
+      alert.classList.remove("flex");
+    }, 300);
+  });
+
+// Btn Close Alert Contact Error
+document
+  .getElementById("closeContactError")
+  .addEventListener("click", function () {
+    const alert = document.getElementById("alertContactError");
+    alert.classList.add("fade-out");
+
+    setTimeout(() => {
+      alert.classList.add("hidden");
+      alert.classList.remove("fade-out");
+      alert.classList.remove("flex");
+      document.querySelector("#name").classList.remove("border-red-500");
+      document.querySelector("#email").classList.remove("border-red-500");
+      document.querySelector("#message").classList.remove("border-red-500");
+    }, 300);
+  });
+
+// Btn Close Alert Contact Error Email
+document
+  .getElementById("closeContactErrorEmail")
+  .addEventListener("click", function () {
+    const alert = document.getElementById("alertContactErrorEmail");
+    alert.classList.add("fade-out");
+
+    setTimeout(() => {
+      alert.classList.add("hidden");
+      alert.classList.remove("fade-out");
+      alert.classList.remove("flex");
+      document.querySelector("#email").classList.remove("border-red-500");
+    }, 300);
+  });
 
 // Button to top
 window.onscroll = function () {
@@ -202,13 +309,3 @@ window.onscroll = function () {
     toTop.classList.add("hidden");
   }
 };
-
-// Btn Close Alert Contact
-document.getElementById("closeContact").addEventListener("click", function () {
-  const alert = document.getElementById("alertContact");
-  alert.classList.add("fade-out");
-
-  setTimeout(() => {
-    alert.style.display = "none";
-  }, 300);
-});

@@ -22,7 +22,15 @@
   @apply text-cyan-500;
 }
 
-#alertContact {
+#alertContactSuccess {
+  transition: opacity 300ms ease-in-out;
+}
+
+#alertContactError {
+  transition: opacity 300ms ease-in-out;
+}
+
+#alertContactErrorEmail {
   transition: opacity 300ms ease-in-out;
 }
 
