@@ -193,7 +193,7 @@ function validate() {
       setTimeout(() => {
         teks3.classList.remove("hidden");
         //
-        // sendmail(name.value, email.value, pesan.value);
+        sendmail(name.value, email.value, pesan.value);
         console.log("Pesan berhasil terkirim");
         alertSuccess.classList.remove("hidden");
         alertSuccess.classList.add("flex");
