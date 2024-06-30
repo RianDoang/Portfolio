@@ -43,7 +43,9 @@ span {
   display: inline-block;
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 300ms, transform 300ms;
+  transition:
+    opacity 300ms,
+    transform 300ms;
 }
 
 .fade-out-up {
