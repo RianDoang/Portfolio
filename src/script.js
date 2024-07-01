@@ -83,6 +83,7 @@ window.addEventListener("click", function (e) {
 (function () {
   emailjs.init("0dM0z_2cs6_UVCki0");
 })();
+// End Emailjs Init
 
 // Send to email
 function validate() {
@@ -246,6 +247,7 @@ function sendmail(name, email, pesan) {
     message: pesan,
   });
 }
+// End Send to email
 
 // Btn Close Alert Contact Success
 document
@@ -260,6 +262,7 @@ document
       alert.classList.remove("flex");
     }, 300);
   });
+// End Btn Close Alert COntact Success
 
 // Btn Close Alert Contact Error
 document
@@ -277,6 +280,7 @@ document
       document.querySelector("#message").classList.remove("border-red-500");
     }, 300);
   });
+// End Btn Close Alert Contact Error
 
 // Btn Close Alert Contact Error Email
 document
@@ -292,6 +296,7 @@ document
       document.querySelector("#email").classList.remove("border-red-500");
     }, 300);
   });
+// End Btn Close Alert Contact Error Email
 
 // Button to top
 window.onscroll = function () {
@@ -309,3 +314,4 @@ window.onscroll = function () {
     toTop.classList.add("hidden");
   }
 };
+// End Button to top

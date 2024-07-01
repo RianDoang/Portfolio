@@ -7,7 +7,7 @@ module.exports = {
         figtree: ["Figtree", "sans-serif"],
       },
       animation: {
-        scaleIn: "scale .2s ease-in-out",
+        scaleIn: "scale .3s ease-in-out",
       },
       keyframes: {
         scale: {
