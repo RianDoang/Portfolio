@@ -67,15 +67,31 @@ const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
 
 hamburger.addEventListener("click", function () {
-  hamburger.classList.toggle("hamburger-active");
-  navMenu.classList.toggle("hidden");
+  hamburger.classList.add("hamburger-active");
+  // navMenu.classList.toggle("hidden");
+  navMenu.classList.remove("hidden");
+  navMenu.classList.add("opacity-0");
+  navMenu.classList.add("-translate-y-5");
+
+  setTimeout(() => {
+    navMenu.classList.remove("opacity-0");
+    navMenu.classList.remove("-translate-y-5");
+    navMenu.classList.add("translate-y-0");
+  }, 5);
 });
 
 // Klik di luar hamburger
 window.addEventListener("click", function (e) {
   if (e.target != hamburger && e.target != navMenu) {
-    hamburger.classList.remove("hamburger-active");
-    navMenu.classList.add("hidden");
+    navMenu.classList.add("-translate-y-5");
+    navMenu.classList.remove("translate-y-0");
+    navMenu.classList.add("opacity-0");
+
+    setTimeout(() => {
+      navMenu.classList.remove("hidden");
+      hamburger.classList.remove("hamburger-active");
+      // navMenu.classList.add("hidden");
+    }, 5);
   }
 });
 
@@ -163,11 +179,10 @@ function validate() {
 
       setTimeout(() => {
         teks1.classList.add("hidden");
-      }, 500);
+      }, 200);
 
       setTimeout(() => {
         teks1.classList.add("reset", "hidden", "opacity-hidden");
-        teks2.classList.add("fade-in-down");
         teks2.classList.remove("reset");
         teks2.classList.remove("opacity-hidden");
       }, 500);
@@ -299,19 +314,29 @@ document
 // End Btn Close Alert Contact Error Email
 
 // Button to top
-window.onscroll = function () {
-  const header = document.querySelector("nav");
-  const fixedNav = header.offsetTop;
-  const toTop = document.querySelector("#to-top");
+const toTop = document.querySelector("#to-top");
 
-  if (window.pageYOffset > fixedNav) {
-    header.classList.add("navbar-fixed");
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 1) {
+    console.log("scroll");
     toTop.classList.remove("hidden");
-    toTop.classList.add("flex");
+    toTop.classList.add("opacity-0");
+
+    setTimeout(() => {
+      toTop.classList.remove("opacity-0");
+      toTop.classList.add("flex");
+    }, 1);
   } else {
-    header.classList.remove("navbar-fixed");
-    toTop.classList.remove("flex");
-    toTop.classList.add("hidden");
+    toTop.classList.add("opacity-100");
+
+    setTimeout(() => {
+      toTop.classList.remove("opacity-100");
+      toTop.classList.add("opacity-0");
+    }, 1);
+
+    setTimeout(() => {
+      toTop.classList.add("hidden");
+    }, 250);
   }
-};
+});
 // End Button to top
