@@ -65,27 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
 // Hamburger
 const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
+const profile = document.querySelector("#profile");
 
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
-  navMenu.classList.toggle("hidden");
-
-  setTimeout(() => {
-    navMenu.classList.toggle("opacity-0");
-    navMenu.classList.toggle("-translate-y-4");
-  }, 5);
+  navMenu.classList.toggle("opacity-0");
+  navMenu.classList.toggle("-translate-y-4");
 });
 
 // Klik di luar hamburger
 window.addEventListener("click", function (e) {
   if (e.target != hamburger && e.target != navMenu) {
     hamburger.classList.remove("hamburger-active");
-    navMenu.classList.add("hidden");
-
-    setTimeout(() => {
-      navMenu.classList.toggle("opacity-0");
-      navMenu.classList.toggle("-translate-y-4");
-    }, 5);
+    navMenu.classList.add("opacity-0");
+    navMenu.classList.add("-translate-y-4");
   }
 });
 
