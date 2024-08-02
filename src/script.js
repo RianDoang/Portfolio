@@ -17,9 +17,9 @@ let currentCharIndex = 0;
 let currentElement = elts.text1;
 let isDeleting = false;
 
-const typingSpeed = 100; // Speed of typing
-const deletingSpeed = 20; // Speed of deleting
-const delayBetweenTexts = 2000; // Delay between switching texts
+const typingSpeed = 100; // Kecepatan mengetik
+const deletingSpeed = 20; // Kecepatan menghapus
+const delayBetweenTexts = 2000; // Delay saat berganti teks
 
 function type() {
   const currentText = texts[currentTextIndex];
@@ -49,23 +49,27 @@ function type() {
 document.addEventListener("DOMContentLoaded", () => {
   type();
 });
+// End Typing teks
 
+// Navbar Menu
 document.addEventListener("DOMContentLoaded", function () {
-  var profileLink = document.getElementById("primary");
-  var otherLinks = document.querySelectorAll("ul.flex li a:not(#primary)");
+  let profileLink = document.getElementById("primary");
+  let otherLinks = document.querySelectorAll("ul.block li a");
 
   otherLinks.forEach(function (link) {
     link.addEventListener("click", function () {
-      profileLink.removeAttribute("id");
+      profileLink.removeAttribute("id"); // Hapus id dari elemen sebelumnya
+      this.setAttribute("id", "primary"); // Tambahkan id ke elemen yang diklik
+      profileLink = this; // Perbarui profileLink dengan elemen yang baru
     });
   });
 });
-// End Typing teks
+
+// End Navbar Menu
 
 // Hamburger
 const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
-const profile = document.querySelector("#profile");
 
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
