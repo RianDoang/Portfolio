@@ -67,30 +67,24 @@ const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
 
 hamburger.addEventListener("click", function () {
-  hamburger.classList.add("hamburger-active");
-  // navMenu.classList.toggle("hidden");
-  navMenu.classList.remove("hidden");
-  navMenu.classList.add("opacity-0");
-  navMenu.classList.add("-translate-y-5");
+  hamburger.classList.toggle("hamburger-active");
+  navMenu.classList.toggle("hidden");
 
   setTimeout(() => {
-    navMenu.classList.remove("opacity-0");
-    navMenu.classList.remove("-translate-y-5");
-    navMenu.classList.add("translate-y-0");
+    navMenu.classList.toggle("opacity-0");
+    navMenu.classList.toggle("-translate-y-4");
   }, 5);
 });
 
 // Klik di luar hamburger
 window.addEventListener("click", function (e) {
   if (e.target != hamburger && e.target != navMenu) {
-    navMenu.classList.add("-translate-y-5");
-    navMenu.classList.remove("translate-y-0");
-    navMenu.classList.add("opacity-0");
+    hamburger.classList.remove("hamburger-active");
+    navMenu.classList.add("hidden");
 
     setTimeout(() => {
-      navMenu.classList.remove("hidden");
-      hamburger.classList.remove("hamburger-active");
-      // navMenu.classList.add("hidden");
+      navMenu.classList.toggle("opacity-0");
+      navMenu.classList.toggle("-translate-y-4");
     }, 5);
   }
 });
