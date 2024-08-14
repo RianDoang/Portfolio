@@ -774,6 +774,10 @@ video {
   width: 25rem;
 }
 
+.w-\[30\%\] {
+  width: 30%;
+}
+
 .w-\[30rem\] {
   width: 30rem;
 }
@@ -788,18 +792,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[30\] {
-  width: 30;
-}
-
-.w-\[30\%\] {
-  width: 30%;
 }
 
 .flex-shrink-0 {
