@@ -790,6 +790,18 @@ video {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[30\] {
+  width: 30;
+}
+
+.w-\[30\%\] {
+  width: 30%;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1705,6 +1717,10 @@ span {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .lg\:justify-evenly {

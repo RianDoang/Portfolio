@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
 // End Navbar Menu
 
 // Hamburger
