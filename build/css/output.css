@@ -774,10 +774,6 @@ video {
   width: 25rem;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
 .w-\[30rem\] {
   width: 30rem;
 }
@@ -1401,6 +1397,10 @@ span {
   opacity: 0;
 }
 
+.hover\:w-10:hover {
+  width: 2.5rem;
+}
+
 .hover\:rotate-3:hover {
   --tw-rotate: 3deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1479,6 +1479,18 @@ span {
   z-index: 10;
 }
 
+.group:hover .group-hover\:w-10 {
+  width: 2.5rem;
+}
+
+.group:hover .group-hover\:w-\[\] {
+  width: ;
+}
+
+.group:hover .group-hover\:w-\[35rem\] {
+  width: 35rem;
+}
+
 .group:hover .group-hover\:-translate-y-10 {
   --tw-translate-y: -2.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1506,8 +1518,20 @@ span {
   opacity: 1;
 }
 
+.group:hover .group-hover\:transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .group:hover .group-hover\:delay-150 {
   transition-delay: 150ms;
+}
+
+.group:hover .group-hover\:duration-150 {
+  transition-duration: 150ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1588,24 +1612,16 @@ span {
     width: 35%;
   }
 
+  .md\:w-\[45\%\] {
+    width: 45%;
+  }
+
   .md\:w-\[75\%\] {
     width: 75%;
   }
 
   .md\:w-\[95\%\] {
     width: 95%;
-  }
-
-  .md\:w-\[45\%\] {
-    width: 45%;
-  }
-
-  .md\:w-\[25\%\] {
-    width: 25%;
-  }
-
-  .md\:w-\[20\%\] {
-    width: 20%;
   }
 
   .md\:translate-y-0 {
@@ -1716,6 +1732,10 @@ span {
     width: 75%;
   }
 
+  .lg\:w-\[30\%\] {
+    width: 30%;
+  }
+
   .lg\:w-\[63\%\] {
     width: 63%;
   }
@@ -1728,20 +1748,8 @@ span {
     width: auto;
   }
 
-  .lg\:w-\[30\%\] {
-    width: 30%;
-  }
-
-  .lg\:w-full {
-    width: 100%;
-  }
-
   .lg\:flex-row {
     flex-direction: row;
-  }
-
-  .lg\:flex-wrap {
-    flex-wrap: wrap;
   }
 
   .lg\:justify-evenly {
