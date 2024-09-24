@@ -734,6 +734,18 @@ video {
   height: 70px;
 }
 
+.h-\[20\] {
+  height: 20;
+}
+
+.h-\[4rem\] {
+  height: 4rem;
+}
+
+.h-\[3rem\] {
+  height: 3rem;
+}
+
 .w-12 {
   width: 3rem;
 }
@@ -788,6 +800,30 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[4\] {
+  width: 4;
+}
+
+.w-\[4rem\] {
+  width: 4rem;
+}
+
+.w-\[3rem\] {
+  width: 3rem;
 }
 
 .flex-shrink-0 {
@@ -1397,10 +1433,6 @@ span {
   opacity: 0;
 }
 
-.hover\:w-10:hover {
-  width: 2.5rem;
-}
-
 .hover\:rotate-3:hover {
   --tw-rotate: 3deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1479,18 +1511,6 @@ span {
   z-index: 10;
 }
 
-.group:hover .group-hover\:w-10 {
-  width: 2.5rem;
-}
-
-.group:hover .group-hover\:w-\[\] {
-  width: ;
-}
-
-.group:hover .group-hover\:w-\[35rem\] {
-  width: 35rem;
-}
-
 .group:hover .group-hover\:-translate-y-10 {
   --tw-translate-y: -2.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1518,20 +1538,8 @@ span {
   opacity: 1;
 }
 
-.group:hover .group-hover\:transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .group:hover .group-hover\:delay-150 {
   transition-delay: 150ms;
-}
-
-.group:hover .group-hover\:duration-150 {
-  transition-duration: 150ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
