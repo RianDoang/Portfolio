@@ -72,8 +72,13 @@ const navMenu = document.querySelector("#navMenu");
 
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-active");
-  navMenu.classList.toggle("opacity-0");
-  navMenu.classList.toggle("-translate-y-4");
+  navMenu.classList.remove("hidden");
+  navMenu.classList.add("flex");
+
+  setTimeout(() => {
+    navMenu.classList.toggle("opacity-0");
+    navMenu.classList.toggle("-translate-y-4");
+  }, 50);
 });
 
 // Klik di luar hamburger
@@ -82,6 +87,11 @@ window.addEventListener("click", function (e) {
     hamburger.classList.remove("hamburger-active");
     navMenu.classList.add("opacity-0");
     navMenu.classList.add("-translate-y-4");
+
+    setTimeout(() => {
+      navMenu.classList.remove("flex");
+      navMenu.classList.add("hidden");
+    }, 150);
   }
 });
 
