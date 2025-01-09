@@ -96,9 +96,7 @@ window.addEventListener("click", function (e) {
 });
 
 // Emailjs Init
-(function () {
-  emailjs.init("0dM0z_2cs6_UVCki0");
-})();
+emailjs.init("QG2TZtjMy86-9GdFM");
 // End Emailjs Init
 
 // Send to email
@@ -256,11 +254,20 @@ function validate() {
 validate();
 
 function sendmail(name, email, pesan) {
-  emailjs.send("service_9o4p2pa", "template_dd8ebfh", {
-    from_name: name,
-    to_name: email,
-    message: pesan,
-  });
+  emailjs
+    .send("service_zik0kzm", "template_p921x97", {
+      from_name: name,
+      to_name: email,
+      message: pesan,
+    })
+    .then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
 }
 // End Send to email
 
