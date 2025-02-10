@@ -1,0 +1,237 @@
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+
+export default function Contact() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [alert, setAlert] = useState({ type: "", message: "", visible: false });
+
+  const handleMouseMove = (e) => {
+    setPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  const handleCloseAlert = () => {
+    setAlert({ ...alert, visible: false });
+  };
+
+  const form = useRef();
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    if (!navigator.onLine) {
+      setAlert({
+        type: "error",
+        message:
+          "Make sure everything is filled in or check your network connection.",
+        visible: true,
+      });
+      return;
+    }
+    setIsSending(true);
+    try {
+      await emailjs.sendForm(
+        "service_zik0kzm",
+        "template_p921x97",
+        form.current,
+        "QG2TZtjMy86-9GdFM"
+      );
+
+      setIsSent(true);
+      setIsSending(false);
+      setAlert({
+        type: "success",
+        message: "Thank You! We have received your message.",
+        visible: true,
+      });
+      form.current.reset();
+      setTimeout(() => {
+        setIsSent(false);
+      }, 2000);
+    } catch {
+      setIsSending(false);
+      setAlert({
+        type: "error",
+        message:
+          "Make sure everything is filled in or check your network connection.",
+        visible: true,
+      });
+    }
+  };
+
+  return (
+    <>
+      <div className="py-10">
+        <h5 className="text-xs text-cyan-500 font-semibold text-center">
+          Contact
+        </h5>
+        <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
+          👋Let&apos;s get connected!
+        </h1>
+        <p className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2">
+          Feel free to reach out if you’re interested in collaborating on a
+          project, have any questions, or just want to connect. I’m always open
+          to new opportunities and conversations!
+        </p>
+
+        <form
+          className="w-[90%] mx-auto"
+          id="contactForm"
+          ref={form}
+          onSubmit={sendEmail}
+        >
+          {/* Alert */}
+          {alert.visible && (
+            <div
+              className={`items-center justify-between bg-slate-700 w-[96%] lg:w-[72%] mx-auto py-3 px-5 mb-8 rounded ${
+                alert.type === "error"
+                  ? "flex text-red-400"
+                  : "flex text-green-500"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <svg
+                  className="flex-shrink-0 w-4 h-4"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="font-medium">{alert.message}</span>
+              </div>
+              <div
+                className="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-slate-600"
+                onClick={handleCloseAlert}
+              >
+                <svg
+                  className="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+              </div>
+            </div>
+          )}
+
+          <div className="w-full lg:mx-auto lg:w-3/4">
+            <div className="mb-8 w-full px-4">
+              <label
+                htmlFor="from_name"
+                className="text-base font-bold text-cyan-500"
+              >
+                Name
+              </label>
+              <input
+                name="from_name"
+                type="text"
+                id="from_name"
+                spellCheck="false"
+                className="w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                required
+              />
+            </div>
+            <div className="mb-8 w-full px-4">
+              <label
+                htmlFor="email"
+                className="text-base font-bold text-cyan-500"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                spellCheck="false"
+                className="w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                required
+              />
+            </div>
+            <div className="mb-8 w-full px-4">
+              <label
+                htmlFor="message"
+                className="text-base font-bold text-cyan-500"
+              >
+                Message
+              </label>
+              <textarea
+                name="message"
+                type="text"
+                id="message"
+                spellCheck="false"
+                className="h-40 w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                required
+              ></textarea>
+            </div>
+            <div className="w-full px-4" id="btnKirim">
+              <div>
+                <button
+                  onMouseEnter={() => setIsVisible(true)}
+                  onMouseLeave={() => setIsVisible(false)}
+                  onMouseMove={handleMouseMove}
+                  type="submit"
+                  className="btnKirim w-full rounded-full bg-cyan-500 h-12 px-8 text-base font-semibold cursor-pointer text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+                  disabled={isSending}
+                >
+                  <span
+                    id="teks1"
+                    className={`transform ${
+                      isSending || isSent ? "hidden" : ""
+                    }`}
+                  >
+                    Send
+                  </span>
+                  <span
+                    id="teks2"
+                    className={`transform ${
+                      isSending ? "flex" : "hidden"
+                    } items-center justify-center gap-1`}
+                  >
+                    <div
+                      className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                      role="status"
+                    ></div>
+                    Sending data...
+                  </span>
+                  <span
+                    id="teks3"
+                    className={`transform ${
+                      isSent ? "flex" : "hidden"
+                    } items-center justify-center`}
+                  >
+                    terkirim
+                  </span>
+                </button>
+                <div
+                  className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
+                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  }`}
+                  style={{
+                    top: position.y + 10, // Tooltip muncul sedikit di bawah kursor
+                    left: position.x + 15, // Tooltip di samping kanan kursor
+                    position: "fixed",
+                    pointerEvents: "none", // Agar tidak mengganggu interaksi kursor
+                    transformOrigin: "top left",
+                  }}
+                >
+                  Button Submit
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
+  );
+}
