@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import AnimProfile from "../../assets/anim/ProfileAnim.json";
+import AnimProfileMobile from "../../assets/anim/ProfileMobile.png";
 import AnimAbout from "../../assets/anim/AboutAnim.json";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
@@ -7,7 +8,7 @@ import Lottie from "lottie-react";
 
 export function ProfileAnim() {
   return (
-    <div className="w-72 md:w-80 lg:w-96">
+    <div className="w-72 hidden md:flex md:w-80 lg:w-96">
       <Lottie animationData={AnimProfile} loop={true} />
     </div>
   );
@@ -16,6 +17,14 @@ export function ProfileAnim() {
 ProfileAnim.propTypes = {
   // Define prop types if any
 };
+
+export function ProfileMobileAnim() {
+  return (
+    <div className="w-3/5 flex mx-auto sm:w-1/2 md:hidden">
+      <img src={AnimProfileMobile} alt="Profile Mobile Animation" />
+    </div>
+  );
+}
 
 export function BgAstroAnim() {
   const [offsetY, setOffsetY] = useState(0);

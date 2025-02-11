@@ -8,6 +8,12 @@ const ProfileAnim = lazy(() =>
   }))
 );
 
+const ProfileMobileAnim = lazy(() =>
+  import("../components/animation/Animation").then((module) => ({
+    default: module.ProfileMobileAnim,
+  }))
+);
+
 export default function Profile({ handleContactClick }) {
   return (
     <>
@@ -110,7 +116,12 @@ export default function Profile({ handleContactClick }) {
       </div>
       <div className="flex-1 flex items-center justify-center md:justify-end">
         <Suspense>
-          <ProfileAnim />
+          <div className="hidden md:flex">
+            <ProfileAnim />
+          </div>
+          <div className="flex md:hidden">
+            <ProfileMobileAnim />
+          </div>
         </Suspense>
       </div>
     </>

@@ -49,7 +49,7 @@ export default function Main() {
         <section
           ref={profileRef}
           id="profile"
-          className="w-[90%] flex flex-col items-center justify-center mx-auto pt-20 pb-20 gap-4 lg:flex-row lg:gap-0"
+          className="w-[90%] flex flex-col items-center justify-center mx-auto pt-28 pb-20 gap-4 lg:flex-row lg:gap-0"
         >
           <Profile handleContactClick={handleContactClick} />
         </section>
