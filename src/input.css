@@ -3,3 +3,31 @@
 .font-figtree {
   font-family: "Figtree", sans-serif;
 }
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+  @apply w-[26.5px];
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+  @apply w-[26.2px];
+}
+
+@layer utilities {
+  @keyframes scaleIn {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

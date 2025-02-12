@@ -1,7 +1,10 @@
+import { useState } from "react";
 import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
 import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 
 export default function Projects() {
+  const [isTouchedQR, setIsTouchedQR] = useState(false);
+
   return (
     <>
       <div className="flex flex-col items-center justify-center">
@@ -20,8 +23,17 @@ export default function Projects() {
           href="https://riandoang.github.io/QRMe/"
           target="_blank"
           className="flex items-center justify-center w-full md:w-[45%] lg:w-[30%]"
+          onTouchStart={() => setIsTouchedQR(true)}
+          onTouchEnd={() => setIsTouchedQR(false)}
         >
-          <div className="bg-slate-900 shadow-sm shadow-slate-800 flex flex-col justify-center p-2 rounded transition duration-150 hover:shadow-lg hover:shadow-slate-700 hover:scale-[1.03] w-4/5 lg:w-auto">
+          <div
+            className={`w-4/5 flex flex-col justify-center p-2 rounded transition duration-150 bg-slate-900 lg:w-auto
+    ${
+      isTouchedQR
+        ? "scale-[1.03] shadow-lg shadow-slate-700"
+        : "shadow-sm shadow-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:scale-[1.03]"
+    }`}
+          >
             <img
               className="rounded-sm mb-3"
               src="src/assets/image/Projects/QRMe.png"
@@ -31,10 +43,17 @@ export default function Projects() {
             <p className="text-sm ml-2 my-2 flex items-center gap-2">
               Technology:
               {/* Tailwind */}
-              <img src={TailwindIcon} alt="Tailwind CSS" className="w-5 h-5 md:w-6 md:h-6"/>
-
+              <img
+                src={TailwindIcon}
+                alt="Tailwind CSS"
+                className="w-5 h-5 md:w-6 md:h-6"
+              />
               {/* React JS */}
-              <img src={ReactIcon} alt="React JS" className="w-5 h-5 md:w-6 md:h-6"/>
+              <img
+                src={ReactIcon}
+                alt="React JS"
+                className="w-5 h-5 md:w-6 md:h-6"
+              />
             </p>
           </div>
         </a>

@@ -13,8 +13,22 @@ export default function Navbar({ sections }) {
   const toggleNavMenu = () => {
     if (!isNavMenuVisible) {
       setIsNavMenuVisible(true);
+      hamburgerMenuRef.current.classList.add("hamburger-active");
+      navMenuRef.current.classList.remove("hidden");
+      navMenuRef.current.classList.add("flex");
+      setTimeout(() => {
+        navMenuRef.current.classList.add("opacity-100", "translate-y-0");
+        navMenuRef.current.classList.remove("-translate-y-4", "opacity-0");
+      }, 50);
     } else {
       setIsNavMenuVisible(false);
+      hamburgerMenuRef.current.classList.remove("hamburger-active");
+      navMenuRef.current.classList.remove("opacity-100", "translate-y-0");
+      navMenuRef.current.classList.add("-translate-y-4", "opacity-0");
+      setTimeout(() => {
+        navMenuRef.current.classList.remove("flex");
+        navMenuRef.current.classList.add("hidden");
+      }, 200);
     }
   };
 
@@ -52,6 +66,13 @@ export default function Navbar({ sections }) {
         !hamburgerMenuRef.current.contains(event.target)
       ) {
         setIsNavMenuVisible(false);
+        hamburgerMenuRef.current.classList.remove("hamburger-active");
+        navMenuRef.current.classList.remove("opacity-100", "translate-y-0");
+        navMenuRef.current.classList.add("-translate-y-4", "opacity-0");
+        setTimeout(() => {
+          navMenuRef.current.classList.remove("flex");
+          navMenuRef.current.classList.add("hidden");
+        }, 200);
       }
     };
 
@@ -81,7 +102,7 @@ export default function Navbar({ sections }) {
     >
       <div className="mx-4 z-10 flex items-center w-full justify-between">
         <span className="md:hidden">
-          <p className="font-semibold text-xl text-white">Rian</p>
+          <p className="cursor-default font-semibold text-xl text-white">Rian</p>
         </span>
         <div
           id="hamburgerMenu"
@@ -101,11 +122,7 @@ export default function Navbar({ sections }) {
         ref={navMenuRef}
         className={`absolute top-full right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out 
           md:flex md:w-auto md:relative md:top-8 md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
-          ${
-            isNavMenuVisible || window.matchMedia("(min-width: 768px)").matches
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-4"
-          }
+          hidden -translate-y-4 opacity-0
           ${shadowStyle}`}
       >
         <ul className="w-full block md:flex md:justify-between">

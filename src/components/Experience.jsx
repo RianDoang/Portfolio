@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import "../input.css";
 import Bnn from "../assets/Experience/bnnTangsel.png";
 import Bsa from "../assets/Experience/bsaLand.png";
 import HtmlIcon from "../assets/Experience/skills/Html.svg";
@@ -11,6 +12,14 @@ import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 import CaretDownIcon from "../assets/Experience/skills/CaretDown.svg";
 
 export default function Experience() {
+  const [isTouchedHtml, setIsTouchedHtml] = useState(false);
+  const [isTouchedCss, setIsTouchedCss] = useState(false);
+  const [isTouchedJs, setIsTouchedJs] = useState(false);
+  const [isTouchedPhp, setIsTouchedPhp] = useState(false);
+  const [isTouchedTailwind, setIsTouchedTailwind] = useState(false);
+  const [isTouchedNode, setIsTouchedNode] = useState(false);
+  const [isTouchedReact, setIsTouchedReact] = useState(false);
+
   return (
     <>
       <h1 className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl">
@@ -23,16 +32,18 @@ export default function Experience() {
       </p>
       <div className="w-[95%] mx-auto flex-wrap flex items-center justify-center gap-x-7 gap-y-16 pb-10 lg:justify-evenly lg:gap-0">
         {/* HTML */}
+
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedHtml(true)}
+            onTouchEnd={() => setIsTouchedHtml(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>HTML</p>
               <img
                 src={CaretDownIcon}
@@ -40,19 +51,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedHtml ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={HtmlIcon} alt="HTML Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>HTML</p>
               <img
@@ -61,23 +70,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={HtmlIcon} alt="HTML Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* CSS */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedCss(true)}
+            onTouchEnd={() => setIsTouchedCss(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedCss ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>CSS</p>
               <img
                 src={CaretDownIcon}
@@ -85,19 +95,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedCss ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={CssIcon} alt="CSS Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>CSS</p>
               <img
@@ -106,23 +114,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={CssIcon} alt="CSS Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* JavaScript */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedJs(true)}
+            onTouchEnd={() => setIsTouchedJs(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedJs ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>JavaScript</p>
               <img
                 src={CaretDownIcon}
@@ -130,19 +139,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedJs ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={JsIcon} alt="JavaScript Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>JavaScript</p>
               <img
@@ -151,23 +158,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={JsIcon} alt="JavaScript Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* Tailwind --> */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedTailwind(true)}
+            onTouchEnd={() => setIsTouchedTailwind(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedTailwind ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>Tailwind CSS</p>
               <img
                 src={CaretDownIcon}
@@ -175,19 +183,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedTailwind ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={TailwindIcon} alt="Tailwind CSS Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Deskop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>Tailwind CSS</p>
               <img
@@ -196,23 +202,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={TailwindIcon} alt="Tailwind CSS Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* PHP */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedPhp(true)}
+            onTouchEnd={() => setIsTouchedPhp(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedPhp ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>PHP</p>
               <img
                 src={CaretDownIcon}
@@ -220,19 +227,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedPhp ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={PhpIcon} alt="PHP Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>PHP</p>
               <img
@@ -241,23 +246,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={PhpIcon} alt="PHP Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* Node JS */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedNode(true)}
+            onTouchEnd={() => setIsTouchedNode(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedNode ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>Node JS</p>
               <img
                 src={CaretDownIcon}
@@ -265,19 +271,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedNode ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={NodeJsIcon} alt="Node Js Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>Node JS</p>
               <img
@@ -286,23 +290,24 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={NodeJsIcon} alt="Node Js Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
 
         {/* React JS */}
         <div>
           {/* Mobile */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
+          <div
             className="group relative flex flex-col items-center md:hidden"
+            onTouchStart={() => setIsTouchedReact(true)}
+            onTouchEnd={() => setIsTouchedReact(false)}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedReact ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+            >
               <p>React JS</p>
               <img
                 src={CaretDownIcon}
@@ -310,19 +315,17 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+                isTouchedReact ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+              }`}
+            >
               <img src={ReactIcon} alt="React Icon" />
             </div>
-          </motion.button>
+          </div>
 
           {/* Tablet, Desktop */}
-          <motion.button
-            whileHover={{
-              scale: [1.0, 0.9, 1.0],
-              transition: { duration: 0.3 },
-            }}
-            className="group relative hidden flex-col items-center md:flex"
-          >
+          <div className="group relative hidden flex-col items-center md:flex">
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
               <p>React JS</p>
               <img
@@ -331,10 +334,10 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32">
+            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={ReactIcon} alt="React Icon" />
             </div>
-          </motion.button>
+          </div>
         </div>
       </div>
       <div className="pt-12 mt-10" id="experience">
