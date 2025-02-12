@@ -134,11 +134,12 @@ export default function Contact() {
                 Name
               </label>
               <input
+                placeholder="Your Name"
                 name="from_name"
                 type="text"
                 id="from_name"
                 spellCheck="false"
-                className="w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                 required
               />
             </div>
@@ -150,11 +151,12 @@ export default function Contact() {
                 Email
               </label>
               <input
+                placeholder="Your Email"
                 type="email"
                 id="email"
                 name="email"
                 spellCheck="false"
-                className="w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                 required
               />
             </div>
@@ -166,11 +168,12 @@ export default function Contact() {
                 Message
               </label>
               <textarea
+                placeholder="Message"
                 name="message"
                 type="text"
                 id="message"
                 spellCheck="false"
-                className="h-40 w-full border rounded-md bg-slate-200 p-3 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-200 mt-1"
+                className="w-full h-40 mt-1 p-3 placeholder:text-sm border rounded-md transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                 required
               ></textarea>
             </div>

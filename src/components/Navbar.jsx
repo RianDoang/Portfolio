@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "../input.css";
 
@@ -6,6 +6,17 @@ export default function Navbar({ sections }) {
   const [active, setActive] = useState("Profile");
   const [transformStyle, setTransformStyle] = useState("translateY(0)");
   const [shadowStyle, setShadowStyle] = useState("");
+  const [isNavMenuVisible, setIsNavMenuVisible] = useState(false);
+  const navMenuRef = useRef(null);
+  const hamburgerMenuRef = useRef(null);
+
+  const toggleNavMenu = () => {
+    if (!isNavMenuVisible) {
+      setIsNavMenuVisible(true);
+    } else {
+      setIsNavMenuVisible(false);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +29,7 @@ export default function Navbar({ sections }) {
           setShadowStyle("");
         }
       } else {
-        setTransformStyle("translateY(0)"); // Reset posisi untuk layar kecil
+        setTransformStyle("translateY(0)");
         setShadowStyle("");
       }
 
@@ -33,8 +44,24 @@ export default function Navbar({ sections }) {
       });
     };
 
+    const handleClickOutside = (event) => {
+      if (
+        navMenuRef.current &&
+        !navMenuRef.current.contains(event.target) &&
+        hamburgerMenuRef.current &&
+        !hamburgerMenuRef.current.contains(event.target)
+      ) {
+        setIsNavMenuVisible(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [sections]);
 
   const handleClick = (e, section) => {
@@ -58,28 +85,40 @@ export default function Navbar({ sections }) {
         </span>
         <div
           id="hamburgerMenu"
+          ref={hamburgerMenuRef}
           className="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
+          onClick={toggleNavMenu}
         >
           <span className="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-cyan-500"></span>
           <span className="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-cyan-500"></span>
           <span className="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-cyan-500"></span>
         </div>
       </div>
+
+      {/* Menu Navigation */}
       <div
         id="navMenu"
-        className={`hidden absolute top-full right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 -translate-y-4 opacity-0 transition duration-200 md:flex md:w-auto md:relative md:top-8 md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100 ${shadowStyle}`}
+        ref={navMenuRef}
+        className={`absolute top-full right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out 
+          md:flex md:w-auto md:relative md:top-8 md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
+          ${
+            isNavMenuVisible || window.matchMedia("(min-width: 768px)").matches
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-4"
+          }
+          ${shadowStyle}`}
       >
         <ul className="w-full block md:flex md:justify-between">
           {sections.map((section) => (
             <li
               key={section.name}
-              className={
+              className={`transition duration-150 ${
                 active === section.name
-                  ? "transition duration-150 text-blue-500 font-medium hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
+                  ? "text-blue-500 font-medium hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
                   : active === "Profile"
-                  ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
-                  : "transition duration-150 text-slate-950/65 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
-              }
+                  ? "text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
+                  : "text-slate-950/65 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
+              }`}
             >
               <a
                 href={`#${section.name.toLowerCase()}`}
