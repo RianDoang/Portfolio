@@ -1,9 +1,9 @@
 import { useState, Suspense, lazy } from "react";
 import RotatingText from "../components/animation/RotatingText";
 import PropTypes from "prop-types";
-import GmailIcon from "../assets/Experience/profile/Gmail.svg";
-import GithubIcon from "../assets/Experience/profile/Github.svg";
-import Linkedincon from "../assets/Experience/profile/Linkedin.svg";
+import GmailIcon from "../assets/experience/profile/Gmail.svg";
+import GithubIcon from "../assets/experience/profile/Github.svg";
+import Linkedincon from "../assets/experience/profile/Linkedin.svg";
 
 const ProfileAnim = lazy(() =>
   import("../components/animation/Animation").then((module) => ({
