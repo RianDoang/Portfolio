@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "../input.css";
-import Bnn from "../assets/Experience/bnnTangsel.png";
-import Bsa from "../assets/Experience/bsaLand.png";
-import HtmlIcon from "../assets/Experience/skills/Html.svg";
-import CssIcon from "../assets/Experience/skills/Css.svg";
-import JsIcon from "../assets/Experience/skills/Js.svg";
-import PhpIcon from "../assets/Experience/skills/Php.svg";
-import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
-import NodeJsIcon from "../assets/Experience/skills/NodeJs.svg";
-import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
-import CaretDownIcon from "../assets/Experience/skills/CaretDown.svg";
+import Bnn from "../assets/experience/bnnTangsel.png";
+import Bsa from "../assets/experience/bsaLand.png";
+import HtmlIcon from "../assets/experience/skills/Html.svg";
+import CssIcon from "../assets/experience/skills/Css.svg";
+import JsIcon from "../assets/experience/skills/Js.svg";
+import PhpIcon from "../assets/experience/skills/Php.svg";
+import TailwindIcon from "../assets/experience/skills/Tailwind.svg";
+import NodeJsIcon from "../assets/experience/skills/NodeJs.svg";
+import ReactIcon from "../assets/experience/skills/ReactJs.svg";
+import CaretDownIcon from "../assets/experience/skills/CaretDown.svg";
 
 export default function Experience() {
   const [isTouchedHtml, setIsTouchedHtml] = useState(false);
@@ -354,7 +354,7 @@ export default function Experience() {
 
         <div className="w-[95%] mx-auto flex flex-col items-center justify-center gap-10">
           {/* BNN Tangsel */}
-          <div className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-700 to-cyan-800 flex flex-col items-start justify-center md:flex-row">
+          <div className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-600 to-cyan-900 flex flex-col items-start justify-center md:flex-row">
             <div className="flex justify-center items-start mt-7 w-[25%]">
               <img
                 className="object-cover w-20 ml-10 md:m-0 md:w-32"
@@ -391,7 +391,7 @@ export default function Experience() {
           </div>
 
           {/* BSA Land */}
-          <div className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-700 to-cyan-600 flex flex-col items-start justify-center md:flex-row">
+          <div className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-sky-800 to-cyan-600 flex flex-col items-start justify-center md:flex-row">
             <div className="flex justify-center items-start mt-7 w-[25%]">
               <img
                 className="object-cover w-20 ml-10 md:m-0 md:w-32"

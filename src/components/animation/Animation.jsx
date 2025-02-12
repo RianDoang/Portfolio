@@ -14,10 +14,6 @@ export function ProfileAnim() {
   );
 }
 
-ProfileAnim.propTypes = {
-  // Define prop types if any
-};
-
 export function ProfileMobileAnim() {
   return (
     <div className="w-3/5 flex mx-auto sm:w-1/2 md:hidden">
@@ -64,10 +60,6 @@ export function BgAstroAnim() {
   );
 }
 
-BgAstroAnim.propTypes = {
-  // Define prop types if any
-};
-
 export function AboutAnim() {
   return (
     <div className="w-72 md:w-80 lg:w-96">
@@ -75,10 +67,6 @@ export function AboutAnim() {
     </div>
   );
 }
-
-AboutAnim.propTypes = {
-  // Define prop types if any
-};
 
 export function Noise({
   patternSize = 250,
