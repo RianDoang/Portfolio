@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import HtmlIcon from "../assets/experience/skills/Html.svg";
 // import CssIcon from "../assets/experience/skills/Css.svg";
-import JsIcon from "@/assets/experience/skills/Js.svg";
+import JsIcon from "../../public/Js.svg";
 import PhpIcon from "../assets/experience/skills/Php.svg";
 import TailwindIcon from "../assets/experience/skills/Tailwind.svg";
 // import NodeJsIcon from "../assets/experience/skills/NodeJs.svg";
