@@ -1,11 +1,8 @@
 import { useState } from "react";
-// import HtmlIcon from "../assets/experience/skills/Html.svg";
-// import CssIcon from "../assets/experience/skills/Css.svg";
-import JsIcon from "../../public/Js.svg";
-import PhpIcon from "../assets/experience/skills/Php.svg";
-import TailwindIcon from "../assets/experience/skills/Tailwind.svg";
-// import NodeJsIcon from "../assets/experience/skills/NodeJs.svg";
-import ReactIcon from "../assets/experience/skills/ReactJs.svg";
+import JsIcon from "../assets/Experience/skills/Js.svg";
+import PhpIcon from "../assets/Experience/skills/Php.svg";
+import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
+import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 import QRProject from "../assets/projects/QRMe.png";
 import RYStore from "../assets/projects/RealmYoke-Store.png";
 import RYGames from "../assets/projects/RealmYoke-Games.png";

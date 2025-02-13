@@ -1,15 +1,15 @@
 import { useState } from "react";
 import "../input.css";
-import Bnn from "../assets/experience/bnnTangsel.png";
-import Bsa from "../assets/experience/bsaLand.png";
-import HtmlIcon from "../assets/experience/skills/Html.svg";
-import CssIcon from "../assets/experience/skills/Css.svg";
-import JsIcon from "../assets/experience/skills/Js.svg";
-import PhpIcon from "../assets/experience/skills/Php.svg";
-import TailwindIcon from "../assets/experience/skills/Tailwind.svg";
-import NodeJsIcon from "../assets/experience/skills/NodeJs.svg";
-import ReactIcon from "../assets/experience/skills/ReactJs.svg";
-import CaretDownIcon from "../assets/experience/skills/CaretDown.svg";
+import Bnn from "../assets/Experience/bnnTangsel.png";
+import Bsa from "../assets/Experience/bsaLand.png";
+import HtmlIcon from "../assets/Experience/skills/Html.svg";
+import CssIcon from "../assets/Experience/skills/Css.svg";
+import JsIcon from "../assets/Experience/skills/Js.svg";
+import PhpIcon from "../assets/Experience/skills/Php.svg";
+import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
+import NodeJsIcon from "../assets/Experience/skills/NodeJs.svg";
+import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
+import CaretDownIcon from "../assets/Experience/skills/CaretDown.svg";
 
 export default function Experience() {
   const [isTouchedHtml, setIsTouchedHtml] = useState(false);
