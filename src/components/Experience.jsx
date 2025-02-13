@@ -25,14 +25,13 @@ export default function Experience() {
       <h1 className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl">
         🎯Specialized Skills
       </h1>
-      <p className="w-[95%] ml-4 text-slate-500 text-left pb-20 text-sm md:text-base md:ml-8 lg:w-1/2">
+      <p className="w-[95%] pb-20 mx-auto text-left text-sm text-slate-500 md:text-base md:ml-8 lg:w-1/2">
         With a solid foundation in both hardware and software, I excel in
         integrating comprehensive technical knowledge with practical
         applications to deliver robust and efficient solutions.
       </p>
       <div className="w-[95%] mx-auto flex-wrap flex items-center justify-center gap-x-7 gap-y-16 pb-10 lg:justify-evenly lg:gap-0">
         {/* HTML */}
-
         <div>
           {/* Mobile */}
           <div
@@ -41,7 +40,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedHtml(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 
           ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>HTML</p>
@@ -52,7 +51,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedHtml ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -96,7 +95,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedCss ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -140,7 +139,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedJs ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -184,7 +183,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedTailwind ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -228,7 +227,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedPhp ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -272,7 +271,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedNode ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -316,7 +315,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 ${
+              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
                 isTouchedReact ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >

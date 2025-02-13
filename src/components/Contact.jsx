@@ -83,44 +83,46 @@ export default function Contact() {
         >
           {/* Alert */}
           {alert.visible && (
-            <div
-              className={`items-center justify-between bg-slate-700 w-[96%] lg:w-[72%] mx-auto py-3 px-5 mb-8 rounded ${
-                alert.type === "error"
-                  ? "flex text-red-400"
-                  : "flex text-green-500"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <svg
-                  className="flex-shrink-0 w-4 h-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                </svg>
-                <span className="font-medium">{alert.message}</span>
-              </div>
+            <div className="w-full px-4 mb-8 lg:mx-auto lg:w-3/4">
               <div
-                className="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-slate-600"
-                onClick={handleCloseAlert}
+                className={`items-center justify-between py-3 px-4 rounded bg-slate-700 ${
+                  alert.type === "error"
+                    ? "flex text-red-400"
+                    : "flex text-green-500"
+                }`}
               >
-                <svg
-                  className="w-3 h-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 14"
+                <div className="flex items-center gap-3">
+                  <svg
+                    className="flex-shrink-0 w-4 h-4"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                  </svg>
+                  <span className="font-medium">{alert.message}</span>
+                </div>
+                <div
+                  className="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-slate-600"
+                  onClick={handleCloseAlert}
                 >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                  />
-                </svg>
+                  <svg
+                    className="w-3 h-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           )}
@@ -143,6 +145,7 @@ export default function Contact() {
                 required
               />
             </div>
+
             <div className="mb-8 w-full px-4">
               <label
                 htmlFor="email"
@@ -160,6 +163,7 @@ export default function Contact() {
                 required
               />
             </div>
+
             <div className="mb-8 w-full px-4">
               <label
                 htmlFor="message"
@@ -177,6 +181,7 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
+            
             <div className="w-full px-4" id="btnKirim">
               <div>
                 <button
@@ -213,7 +218,7 @@ export default function Contact() {
                       isSent ? "flex" : "hidden"
                     } items-center justify-center`}
                   >
-                    terkirim
+                    Success
                   </span>
                 </button>
                 <div

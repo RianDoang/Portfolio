@@ -52,7 +52,7 @@ export default function Projects() {
           efficient solutions in both web development and networking.
         </p>
       </div>
-      <div className="w-[95%] grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 md:mx-auto">
+      <div className="w-full grid grid-cols-1 gap-10 sm:mx-auto sm:grid-cols-2 lg:w-[95%] lg:grid-cols-3">
         {displayedProjects.map((project, index) => (
           <a
             key={index}

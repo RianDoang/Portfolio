@@ -30,6 +30,12 @@ export default function Main() {
     history.replaceState(null, "", "");
   };
 
+  const handleProfileClick = (e) => {
+    e.preventDefault();
+    profileRef.current.scrollIntoView({ behavior: "smooth" });
+    history.replaceState(null, "", "");
+  };
+
   return (
     <div>
       <div className="fixed top-0 left-0 w-full h-screen pointer-events-none -z-10">
@@ -78,7 +84,10 @@ export default function Main() {
           <Contact />
         </section>
 
-        <Footer />
+        <Footer
+          handleContactClick={handleContactClick}
+          handleProfileClick={handleProfileClick}
+        />
       </div>
     </div>
   );

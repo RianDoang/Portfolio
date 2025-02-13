@@ -55,14 +55,13 @@ export default function Profile({ handleContactClick }) {
         </div>
         <div className="flex gap-7 mt-7">
           {/* Gmail */}
-          <a
-            href="#contact"
+          <button
             onClick={handleContactClick}
             onTouchStart={() => setIsTouchedGmail(true)}
             onTouchEnd={() => setIsTouchedGmail(false)}
           >
             <div
-              className={`w-10 h-10 flex items-center justify-center p-1 rounded-lg transition duration-300 ease-in-out bg-slate-300 hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700 ${
+              className={`w-10 h-10 flex items-center justify-center p-1 rounded-lg cursor-pointer transition duration-300 ease-in-out bg-slate-300 hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700 ${
                 isTouchedGmail
                   ? "rotate-3 scale-110 shadow-md shadow-slate-700"
                   : "hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700"
@@ -70,7 +69,7 @@ export default function Profile({ handleContactClick }) {
             >
               <img src={GmailIcon} alt="Gmail Icon" />
             </div>
-          </a>
+          </button>
 
           {/* Github */}
           <a
