@@ -60,6 +60,9 @@ export default function Contact() {
     }
   };
 
+  const fadeInOutClass = (isVisible) =>
+      isVisible ? "animate-fadeIn" : "animate-fadeOut";
+
   return (
     <>
       <div className="py-10">
@@ -181,7 +184,7 @@ export default function Contact() {
                 required
               ></textarea>
             </div>
-            
+
             <div className="w-full px-4" id="btnKirim">
               <div>
                 <button
@@ -196,7 +199,7 @@ export default function Contact() {
                     id="teks1"
                     className={`transform ${
                       isSending || isSent ? "hidden" : ""
-                    }`}
+                    } ${fadeInOutClass(!isSending && !isSent)}`}
                   >
                     Send
                   </span>
@@ -204,7 +207,9 @@ export default function Contact() {
                     id="teks2"
                     className={`transform ${
                       isSending ? "flex" : "hidden"
-                    } items-center justify-center gap-1`}
+                    } items-center justify-center gap-1 ${fadeInOutClass(
+                      isSending
+                    )}`}
                   >
                     <div
                       className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
@@ -216,11 +221,12 @@ export default function Contact() {
                     id="teks3"
                     className={`transform ${
                       isSent ? "flex" : "hidden"
-                    } items-center justify-center`}
+                    } items-center justify-center ${fadeInOutClass(isSent)}`}
                   >
                     Success
                   </span>
                 </button>
+
                 <div
                   className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"

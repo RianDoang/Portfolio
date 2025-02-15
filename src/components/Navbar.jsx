@@ -102,7 +102,9 @@ export default function Navbar({ sections }) {
     >
       <div className="mx-4 z-10 flex items-center w-full justify-between">
         <span className="md:hidden">
-          <p className="cursor-default font-semibold text-xl text-white">Rian</p>
+          <p className="cursor-default font-semibold text-xl text-white">
+            Rian
+          </p>
         </span>
         <div
           id="hamburgerMenu"
@@ -131,10 +133,10 @@ export default function Navbar({ sections }) {
               key={section.name}
               className={`transition duration-150 ${
                 active === section.name
-                  ? "text-blue-500 font-medium hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
+                  ? "text-cyan-500 font-medium transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
                   : active === "Profile"
-                  ? "text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
-                  : "text-slate-950/65 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-blue-500 font-medium md:hover:bg-transparent"
+                  ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
+                  : "transition duration-150 text-slate-950/50 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
               }`}
             >
               <a
