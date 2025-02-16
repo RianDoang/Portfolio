@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Ripples from "react-ripples";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
@@ -61,7 +62,7 @@ export default function Contact() {
   };
 
   const fadeInOutClass = (isVisible) =>
-      isVisible ? "animate-fadeIn" : "animate-fadeOut";
+    isVisible ? "animate-fadeIn" : "animate-fadeOut";
 
   return (
     <>
@@ -186,7 +187,7 @@ export default function Contact() {
             </div>
 
             <div className="w-full px-4" id="btnKirim">
-              <div>
+              <Ripples className="w-full inline-block" during={2000}>
                 <button
                   onMouseEnter={() => setIsVisible(true)}
                   onMouseLeave={() => setIsVisible(false)}
@@ -226,21 +227,21 @@ export default function Contact() {
                     Success
                   </span>
                 </button>
+              </Ripples>
 
-                <div
-                  className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
-                    isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
-                  }`}
-                  style={{
-                    top: position.y + 10, // Tooltip muncul sedikit di bawah kursor
-                    left: position.x + 15, // Tooltip di samping kanan kursor
-                    position: "fixed",
-                    pointerEvents: "none", // Agar tidak mengganggu interaksi kursor
-                    transformOrigin: "top left",
-                  }}
-                >
-                  Button Submit
-                </div>
+              <div
+                className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
+                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                }`}
+                style={{
+                  top: position.y + 10, // Tooltip muncul sedikit di bawah kursor
+                  left: position.x + 15, // Tooltip di samping kanan kursor
+                  position: "fixed",
+                  pointerEvents: "none", // Agar tidak mengganggu interaksi kursor
+                  transformOrigin: "top left",
+                }}
+              >
+                Button Submit
               </div>
             </div>
           </div>

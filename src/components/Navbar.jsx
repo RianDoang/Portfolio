@@ -136,7 +136,7 @@ export default function Navbar({ sections }) {
                   ? "text-cyan-500 font-medium transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
                   : active === "Profile"
                   ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
-                  : "transition duration-150 text-slate-950/50 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
+                  : "transition duration-150 text-slate-950/70 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
               }`}
             >
               <a

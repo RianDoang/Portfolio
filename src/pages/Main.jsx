@@ -32,7 +32,7 @@ export default function Main() {
 
   const handleProfileClick = (e) => {
     e.preventDefault();
-    profileRef.current.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     history.replaceState(null, "", "");
   };
 
