@@ -120,35 +120,40 @@ export default function Navbar({ sections }) {
 
       {/* Menu Navigation */}
       <div
-        id="navMenu"
-        ref={navMenuRef}
-        className={`absolute top-full right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out 
-          md:flex md:w-auto md:relative md:top-8 md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
+        data-aos="fade-down"
+        className="md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2"
+      >
+        <div
+          id="navMenu"
+          ref={navMenuRef}
+          className={`absolute top-8 right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out 
+          md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
           hidden -translate-y-4 opacity-0
           ${shadowStyle}`}
-      >
-        <ul className="w-full block md:flex md:justify-between">
-          {sections.map((section) => (
-            <li
-              key={section.name}
-              className={`transition duration-150 ${
-                active === section.name
-                  ? "text-cyan-500 font-medium transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
-                  : active === "Profile"
-                  ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
-                  : "transition duration-150 text-slate-950/70 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
-              }`}
-            >
-              <a
-                href={`#${section.name.toLowerCase()}`}
-                className="flex pl-4 py-2 text-base md:pl-0"
-                onClick={(e) => handleClick(e, section)}
+        >
+          <ul className="w-full block md:flex md:justify-between">
+            {sections.map((section) => (
+              <li
+                key={section.name}
+                className={`transition duration-150 ${
+                  active === section.name
+                    ? "text-cyan-500 font-medium transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
+                    : active === "Profile"
+                    ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
+                    : "transition duration-150 text-slate-950/60 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
+                }`}
               >
-                {section.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+                <a
+                  href={`#${section.name.toLowerCase()}`}
+                  className="flex pl-4 py-2 text-base md:pl-0"
+                  onClick={(e) => handleClick(e, section)}
+                >
+                  {section.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </nav>
   );

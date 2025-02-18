@@ -10,21 +10,39 @@ export default function About() {
   return (
     <>
       <div className="w-full lg:w-[63%]">
-        <h1 className="mx-5 pb-4 font-semibold text-4xl md:pb-8 md:text-6xl">
-          👨‍💻About Me
-        </h1>
-        <p className="mx-5 text-sm text-slate-300 md:text-base">
-          I&apos;m a Computer Engineering and Networking graduate with a passion
-          for web development. I specialize in creating dynamic and
-          user-friendly websites using HTML, CSS, and JavaScript. My background
-          in networking enhances my ability to design robust, efficient systems.
-          Let&apos;s collaborate to bring innovative solutions to life!
-        </p>
+        <div data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
+          <h1 className="mx-5 pb-4 font-semibold text-4xl md:pb-8 md:text-6xl">
+            👨‍💻About Me
+          </h1>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="700"
+          data-aos-offset="400"
+        >
+          <p className="mx-5 text-sm text-slate-300 md:text-base">
+            I&apos;m a Computer Engineering and Networking graduate with a
+            passion for web development. I specialize in creating dynamic and
+            user-friendly websites using HTML, CSS, and JavaScript. My
+            background in networking enhances my ability to design robust,
+            efficient systems. Let&apos;s collaborate to bring innovative
+            solutions to life!
+          </p>
+        </div>
       </div>
       <div className="hidden md:flex md:w-[35%]">
-        <Suspense>
-          <AboutAnim />
-        </Suspense>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-duration="700"
+          data-aos-offset="400"
+        >
+          <Suspense>
+            <AboutAnim />
+          </Suspense>
+        </div>
       </div>
     </>
   );

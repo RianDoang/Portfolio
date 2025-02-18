@@ -1,4 +1,6 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import About from "../components/About";
@@ -36,6 +38,14 @@ export default function Main() {
     history.replaceState(null, "", "");
   };
 
+  useEffect(() => {
+    AOS.init({
+      once: false,
+    });
+
+    AOS.refresh();
+  }, []);
+
   return (
     <div>
       <div className="fixed top-0 left-0 w-full h-screen pointer-events-none -z-10">
@@ -48,14 +58,14 @@ export default function Main() {
         />
       </div>
 
-      <Navbar sections={sections} />
-
       <div className="relative text-white">
+        <Navbar sections={sections} />
+
         {/* Profile Section */}
         <section
           ref={profileRef}
           id="profile"
-          className="w-[90%] flex flex-col items-center justify-center mx-auto pt-28 pb-20 gap-4 lg:flex-row lg:gap-0"
+          className="w-[90%] flex flex-col items-center justify-center mx-auto pt-28 gap-4 lg:flex-row lg:gap-0"
         >
           <Profile handleContactClick={handleContactClick} />
         </section>
@@ -64,23 +74,23 @@ export default function Main() {
         <section
           ref={aboutRef}
           id="about"
-          className="flex flex-col items-center justify-between py-14 my-5 text-white md:flex-row"
+          className="flex flex-col items-center justify-between pt-28 my-5 text-white md:flex-row"
         >
           <About />
         </section>
 
         {/* Project Section */}
-        <section ref={projectsRef} id="projects" className="w-full py-10">
+        <section ref={projectsRef} id="projects" className="w-full pt-28">
           <Projects />
         </section>
 
         {/* Experience Section */}
-        <section ref={experienceRef} id="experience" className="py-10">
+        <section ref={experienceRef} id="experience" className="w-full pt-28">
           <Experience />
         </section>
 
         {/* Contact Section */}
-        <section ref={contactRef} id="contact" className="w-full">
+        <section ref={contactRef} id="contact" className="w-full pt-18">
           <Contact />
         </section>
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import JsIcon from "../assets/Experience/skills/Js.svg";
 import PhpIcon from "../assets/Experience/skills/Php.svg";
@@ -13,6 +13,7 @@ export default function Projects() {
   const [isTouchedRYS, setIsTouchedRYS] = useState(false);
   const [isTouchedRYG, setIsTouchedRYG] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const projects = [
     {
@@ -35,7 +36,7 @@ export default function Projects() {
       imgAlt: "RealmYoke Games Projects",
       title: "RealmYoke Games",
       technologies: [TailwindIcon, ReactIcon],
-    }
+    },
   ];
 
   const handleShowMoreClick = () => {
@@ -47,21 +48,43 @@ export default function Projects() {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <div
         id="projects-section"
         className="flex flex-col items-center justify-center"
       >
-        <h5 className="text-xs text-cyan-500 font-semibold">Projects</h5>
-        <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
-          🚀Highlight Projects
-        </h1>
-        <p className="w-[90%] text-center text-slate-500 pb-20 text-sm md:text-base md:w-1/2">
-          Demonstrating my ability to turn complex technical requirements into
-          successful projects, I have consistently delivered innovative and
-          efficient solutions in both web development and networking.
-        </p>
+        <div data-aos="fade" data-aos-duration="700" data-aos-offset="400">
+          <h5 className="text-xs text-cyan-500 font-semibold">Projects</h5>
+        </div>
+
+        <div data-aos="fade-up" data-aos-duration="700" data-aos-offset="400">
+          <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
+            🚀Highlight Projects
+          </h1>
+        </div>
+
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-offset="400"
+          className="w-[90%] pb-20 text-center text-sm text-slate-500 md:text-base md:w-1/2"
+        >
+          <p>
+            Demonstrating my ability to turn complex technical requirements into
+            successful projects, I have consistently delivered innovative and
+            efficient solutions in both web development and networking.
+          </p>
+        </div>
       </div>
 
       {/* Container Proyek */}
@@ -73,7 +96,10 @@ export default function Projects() {
             href={project.href}
             target="_blank"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{
+              opacity: scrollY > 900 ? 1 : 0,
+              y: scrollY > 900 ? 0 : 20,
+            }}
             transition={{ duration: 0.3, delay: index * 0.2 }}
             className="flex items-center justify-center w-full"
             onTouchStart={() => {
@@ -129,7 +155,10 @@ export default function Projects() {
                 href={project.href}
                 target="_blank"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{
+                  opacity: scrollY > 800 ? 1 : 0,
+                  y: scrollY > 800 ? 0 : 20,
+                }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3, delay: index * 0.2 }}
                 className="flex items-center justify-center w-full"

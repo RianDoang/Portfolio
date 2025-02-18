@@ -67,13 +67,28 @@ export default function Contact() {
   return (
     <>
       <div className="py-10">
-        <h5 className="text-xs text-cyan-500 font-semibold text-center">
+        <h5
+          data-aos="fade"
+          data-aos-duration="700"
+          data-aos-offset="400"
+          className="text-xs text-cyan-500 font-semibold text-center"
+        >
           Contact
         </h5>
-        <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
+        <h1
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-offset="400"
+          className="text-3xl font-bold pb-5 text-center md:text-6xl"
+        >
           👋Let&apos;s get connected!
         </h1>
-        <p className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2">
+        <p
+          data-aos="fade-up"
+          data-aos-duration="700"
+          data-aos-offset="400"
+          className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2"
+        >
           Feel free to reach out if you’re interested in collaborating on a
           project, have any questions, or just want to connect. I’m always open
           to new opportunities and conversations!
@@ -133,101 +148,144 @@ export default function Contact() {
 
           <div className="w-full lg:mx-auto lg:w-3/4">
             <div className="mb-8 w-full px-4">
-              <label
-                htmlFor="from_name"
-                className="text-base font-bold text-cyan-500"
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
               >
-                Name
-              </label>
-              <input
-                placeholder="Your Name"
-                name="from_name"
-                type="text"
-                id="from_name"
-                spellCheck="false"
-                className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
-                required
-              />
+                <label
+                  htmlFor="from_name"
+                  className="text-base font-bold text-cyan-500"
+                >
+                  Name
+                </label>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
+              >
+                <input
+                  placeholder="Your Name"
+                  name="from_name"
+                  type="text"
+                  id="from_name"
+                  spellCheck="false"
+                  className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  required
+                />
+              </div>
             </div>
 
             <div className="mb-8 w-full px-4">
-              <label
-                htmlFor="email"
-                className="text-base font-bold text-cyan-500"
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
               >
-                Email
-              </label>
-              <input
-                placeholder="Your Email"
-                type="email"
-                id="email"
-                name="email"
-                spellCheck="false"
-                className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
-                required
-              />
+                <label
+                  htmlFor="email"
+                  className="text-base font-bold text-cyan-500"
+                >
+                  Email
+                </label>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
+              >
+                <input
+                  placeholder="Your Email"
+                  type="email"
+                  id="email"
+                  name="email"
+                  spellCheck="false"
+                  className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  required
+                />
+              </div>
             </div>
 
             <div className="mb-8 w-full px-4">
-              <label
-                htmlFor="message"
-                className="text-base font-bold text-cyan-500"
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
               >
-                Message
-              </label>
-              <textarea
-                placeholder="Message"
-                name="message"
-                type="text"
-                id="message"
-                spellCheck="false"
-                className="w-full h-40 mt-1 p-3 placeholder:text-sm border rounded-md transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
-                required
-              ></textarea>
+                <label
+                  htmlFor="message"
+                  className="text-base font-bold text-cyan-500"
+                >
+                  Message
+                </label>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="400"
+              >
+                <textarea
+                  placeholder="Message"
+                  name="message"
+                  type="text"
+                  id="message"
+                  spellCheck="false"
+                  className="w-full h-40 mt-1 p-3 placeholder:text-sm border rounded-md transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  required
+                ></textarea>
+              </div>
             </div>
 
             <div className="w-full px-4" id="btnKirim">
-              <Ripples className="w-full inline-block" during={2000}>
-                <button
-                  onMouseEnter={() => setIsVisible(true)}
-                  onMouseLeave={() => setIsVisible(false)}
-                  onMouseMove={handleMouseMove}
-                  type="submit"
-                  className="btnKirim w-full rounded-full bg-cyan-500 h-12 px-8 text-base font-semibold cursor-pointer text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
-                  disabled={isSending}
-                >
-                  <span
-                    id="teks1"
-                    className={`transform ${
-                      isSending || isSent ? "hidden" : ""
-                    } ${fadeInOutClass(!isSending && !isSent)}`}
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-offset="250"
+                className="w-full"
+              >
+                <Ripples className="w-full inline-block" during={2000}>
+                  <button
+                    onMouseEnter={() => setIsVisible(true)}
+                    onMouseLeave={() => setIsVisible(false)}
+                    onMouseMove={handleMouseMove}
+                    type="submit"
+                    className="btnKirim w-full rounded-full bg-cyan-500 h-12 px-8 text-base font-semibold cursor-pointer text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+                    disabled={isSending}
                   >
-                    Send
-                  </span>
-                  <span
-                    id="teks2"
-                    className={`transform ${
-                      isSending ? "flex" : "hidden"
-                    } items-center justify-center gap-1 ${fadeInOutClass(
-                      isSending
-                    )}`}
-                  >
-                    <div
-                      className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
-                      role="status"
-                    ></div>
-                    Sending data...
-                  </span>
-                  <span
-                    id="teks3"
-                    className={`transform ${
-                      isSent ? "flex" : "hidden"
-                    } items-center justify-center ${fadeInOutClass(isSent)}`}
-                  >
-                    Success
-                  </span>
-                </button>
-              </Ripples>
+                    <span
+                      id="teks1"
+                      className={`transform ${
+                        isSending || isSent ? "hidden" : ""
+                      } ${fadeInOutClass(!isSending && !isSent)}`}
+                    >
+                      Send
+                    </span>
+                    <span
+                      id="teks2"
+                      className={`transform ${
+                        isSending ? "flex" : "hidden"
+                      } items-center justify-center gap-1 ${fadeInOutClass(
+                        isSending
+                      )}`}
+                    >
+                      <div
+                        className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        role="status"
+                      ></div>
+                      Sending data...
+                    </span>
+                    <span
+                      id="teks3"
+                      className={`transform ${
+                        isSent ? "flex" : "hidden"
+                      } items-center justify-center ${fadeInOutClass(isSent)}`}
+                    >
+                      Success
+                    </span>
+                  </button>
+                </Ripples>
+              </div>
 
               <div
                 className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
