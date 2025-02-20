@@ -20,7 +20,7 @@ export default function About() {
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="700"
-          data-aos-offset="400"
+          data-aos-offset="300"
         >
           <p className="mx-5 text-sm text-slate-300 md:text-base">
             I&apos;m a Computer Engineering and Networking graduate with a
@@ -37,7 +37,7 @@ export default function About() {
           data-aos="fade-up"
           data-aos-delay="200"
           data-aos-duration="700"
-          data-aos-offset="400"
+          data-aos-offset="300"
         >
           <Suspense>
             <AboutAnim />

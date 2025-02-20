@@ -70,7 +70,7 @@ export default function Contact() {
         <h5
           data-aos="fade"
           data-aos-duration="700"
-          data-aos-offset="400"
+          data-aos-offset="300"
           className="text-xs text-cyan-500 font-semibold text-center"
         >
           Contact
@@ -78,7 +78,7 @@ export default function Contact() {
         <h1
           data-aos="fade-up"
           data-aos-duration="700"
-          data-aos-offset="400"
+          data-aos-offset="300"
           className="text-3xl font-bold pb-5 text-center md:text-6xl"
         >
           👋Let&apos;s get connected!
@@ -86,7 +86,7 @@ export default function Contact() {
         <p
           data-aos="fade-up"
           data-aos-duration="700"
-          data-aos-offset="400"
+          data-aos-offset="300"
           className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2"
         >
           Feel free to reach out if you’re interested in collaborating on a
@@ -151,7 +151,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <label
                   htmlFor="from_name"
@@ -163,7 +163,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <input
                   placeholder="Your Name"
@@ -181,7 +181,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <label
                   htmlFor="email"
@@ -193,7 +193,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <input
                   placeholder="Your Email"
@@ -211,7 +211,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <label
                   htmlFor="message"
@@ -223,7 +223,7 @@ export default function Contact() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="700"
-                data-aos-offset="400"
+                data-aos-offset="300"
               >
                 <textarea
                   placeholder="Message"
