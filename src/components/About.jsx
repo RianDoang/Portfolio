@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <div className="w-full lg:w-[63%]">
-        <div data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
+        <div data-aos="fade-up" data-aos-duration="700" data-aos-offset="350">
           <h1 className="mx-5 pb-4 font-semibold text-4xl md:pb-8 md:text-6xl">
             👨‍💻About Me
           </h1>
@@ -20,7 +20,7 @@ export default function About() {
           data-aos="fade-up"
           data-aos-delay="100"
           data-aos-duration="700"
-          data-aos-offset="300"
+          data-aos-offset="350"
         >
           <p className="mx-5 text-sm text-slate-300 md:text-base">
             I&apos;m a Computer Engineering and Networking graduate with a
@@ -37,7 +37,7 @@ export default function About() {
           data-aos="fade-up"
           data-aos-delay="200"
           data-aos-duration="700"
-          data-aos-offset="300"
+          data-aos-offset="350"
         >
           <Suspense>
             <AboutAnim />

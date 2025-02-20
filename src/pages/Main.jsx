@@ -40,7 +40,7 @@ export default function Main() {
 
   useEffect(() => {
     AOS.init({
-      once: false,
+      once: true,
     });
 
     AOS.refresh();
