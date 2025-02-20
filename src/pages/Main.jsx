@@ -41,6 +41,8 @@ export default function Main() {
   useEffect(() => {
     AOS.init({
       once: true,
+      offset: 250,
+      duration: 500,
     });
 
     AOS.refresh();

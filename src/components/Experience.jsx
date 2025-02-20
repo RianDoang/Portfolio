@@ -24,8 +24,6 @@ export default function Experience() {
     <>
       <h1
         data-aos="fade-up"
-        data-aos-duration="700"
-        data-aos-offset="350"
         className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl"
       >
         🎯Specialized Skills
@@ -33,8 +31,6 @@ export default function Experience() {
       <p
         data-aos="fade-up"
         data-aos-delay="100"
-        data-aos-duration="700"
-        data-aos-offset="350"
         className="w-[95%] pb-20 mx-auto text-left text-sm text-slate-500 md:text-base md:ml-8 lg:w-1/2"
       >
         With a solid foundation in both hardware and software, I excel in
@@ -47,8 +43,6 @@ export default function Experience() {
           {/* Mobile */}
           <div
             data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedHtml(true)}
             onTouchEnd={() => setIsTouchedHtml(false)}
@@ -77,8 +71,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -101,8 +93,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedCss(true)}
             onTouchEnd={() => setIsTouchedCss(false)}
@@ -131,8 +121,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -155,8 +143,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedJs(true)}
             onTouchEnd={() => setIsTouchedJs(false)}
@@ -185,8 +171,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="100"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -209,8 +193,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedTailwind(true)}
             onTouchEnd={() => setIsTouchedTailwind(false)}
@@ -238,8 +220,6 @@ export default function Experience() {
           {/* Tablet, Deskop */}
           <div
             data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -262,8 +242,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="400"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedPhp(true)}
             onTouchEnd={() => setIsTouchedPhp(false)}
@@ -292,8 +270,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="200"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -316,8 +292,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="600"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedNode(true)}
             onTouchEnd={() => setIsTouchedNode(false)}
@@ -346,8 +320,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="300"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -370,8 +342,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="700"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedReact(true)}
             onTouchEnd={() => setIsTouchedReact(false)}
@@ -400,8 +370,6 @@ export default function Experience() {
           <div
             data-aos="fade-up"
             data-aos-delay="400"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -419,26 +387,17 @@ export default function Experience() {
         </div>
       </div>
       <div className="pt-12 mt-10" id="experience">
-        <p
-          data-aos="fade"
-          data-aos-duration="700"
-          data-aos-offset="350"
-          className="text-xs text-center text-cyan-500"
-        >
+        <p data-aos="fade" className="text-xs text-center text-cyan-500">
           Experience
         </p>
         <h1
           data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-offset="350"
           className="text-3xl font-bold text-center mb-5 md:text-6xl"
         >
           🏢Work Experiences
         </h1>
         <p
           data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-offset="350"
           className="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2"
         >
           Combining technical expertise with practical application, I have
@@ -451,8 +410,6 @@ export default function Experience() {
           {/* BNN Tangsel */}
           <div
             data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-600 to-cyan-900 flex flex-col items-start justify-center md:flex-row"
           >
             <div className="flex justify-center items-start mt-7 w-[25%]">
@@ -493,8 +450,6 @@ export default function Experience() {
           {/* BSA Land */}
           <div
             data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-offset="350"
             className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-sky-800 to-cyan-600 flex flex-col items-start justify-center md:flex-row"
           >
             <div className="flex justify-center items-start mt-7 w-[25%]">

@@ -148,11 +148,7 @@ export default function Contact() {
 
           <div className="w-full lg:mx-auto lg:w-3/4">
             <div className="mb-8 w-full px-4">
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <label
                   htmlFor="from_name"
                   className="text-base font-bold text-cyan-500"
@@ -160,11 +156,7 @@ export default function Contact() {
                   Name
                 </label>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <input
                   placeholder="Your Name"
                   name="from_name"
@@ -178,11 +170,7 @@ export default function Contact() {
             </div>
 
             <div className="mb-8 w-full px-4">
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <label
                   htmlFor="email"
                   className="text-base font-bold text-cyan-500"
@@ -190,11 +178,7 @@ export default function Contact() {
                   Email
                 </label>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <input
                   placeholder="Your Email"
                   type="email"
@@ -208,11 +192,7 @@ export default function Contact() {
             </div>
 
             <div className="mb-8 w-full px-4">
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <label
                   htmlFor="message"
                   className="text-base font-bold text-cyan-500"
@@ -220,11 +200,7 @@ export default function Contact() {
                   Message
                 </label>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="350"
-              >
+              <div data-aos="fade-up">
                 <textarea
                   placeholder="Message"
                   name="message"

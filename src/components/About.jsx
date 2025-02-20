@@ -16,12 +16,7 @@ export default function About() {
           </h1>
         </div>
 
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="700"
-          data-aos-offset="350"
-        >
+        <div data-aos="fade-up" data-aos-delay="100">
           <p className="mx-5 text-sm text-slate-300 md:text-base">
             I&apos;m a Computer Engineering and Networking graduate with a
             passion for web development. I specialize in creating dynamic and
@@ -33,12 +28,7 @@ export default function About() {
         </div>
       </div>
       <div className="hidden md:flex md:w-[35%]">
-        <div
-          data-aos="fade-up"
-          data-aos-delay="200"
-          data-aos-duration="700"
-          data-aos-offset="350"
-        >
+        <div data-aos="fade-up" data-aos-delay="200">
           <Suspense>
             <AboutAnim />
           </Suspense>

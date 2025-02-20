@@ -63,11 +63,11 @@ export default function Projects() {
         id="projects-section"
         className="flex flex-col items-center justify-center"
       >
-        <div data-aos="fade" data-aos-duration="700" data-aos-offset="350">
+        <div data-aos="fade">
           <h5 className="text-xs text-cyan-500 font-semibold">Projects</h5>
         </div>
 
-        <div data-aos="fade-up" data-aos-duration="700" data-aos-offset="350">
+        <div data-aos="fade-up">
           <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
             🚀Highlight Projects
           </h1>
@@ -75,8 +75,6 @@ export default function Projects() {
 
         <div
           data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-offset="350"
           className="w-[90%] pb-20 text-center text-sm text-slate-500 md:text-base md:w-1/2"
         >
           <p>
