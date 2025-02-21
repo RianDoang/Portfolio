@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "../input.css";
 import Bnn from "../assets/Experience/bnnTangsel.png";
 import Bsa from "../assets/Experience/bsaLand.png";
@@ -20,129 +21,255 @@ export default function Experience() {
   const [isTouchedNode, setIsTouchedNode] = useState(false);
   const [isTouchedReact, setIsTouchedReact] = useState(false);
 
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [triggerPoint, setTriggerPoint] = useState(false);
+  const [hasAnimatedSkill, setHasAnimatedSkill] = useState(false);
+  const [triggerSkill, setTriggerSkill] = useState(false);
+  const [hasAnimatedExp1, setHasAnimatedExp1] = useState(false);
+  const [triggerExp1, settriggerExp1] = useState(false);
+  const [hasAnimatedExp2, setHasAnimatedExp2] = useState(false);
+  const [triggerExp2, settriggerExp2] = useState(false);
+  const [hasAnimatedExp3, setHasAnimatedExp3] = useState(false);
+  const [triggerExp3, settriggerExp3] = useState(false);
+
+  useEffect(() => {
+    const updateTriggers = () => {
+      if (window.innerWidth < 768) {
+        // Mobile
+        setTriggerPoint(1690);
+        setTriggerSkill(1915);
+        settriggerExp1(2675);
+        settriggerExp2(3030);
+        settriggerExp3(3650);
+      } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+        // Tablet
+        setTriggerPoint(1490);
+        setTriggerSkill(1680);
+        settriggerExp1(2166);
+        settriggerExp2(2400);
+        settriggerExp3(2740);
+      } else {
+        // Desktop
+        setTriggerPoint(1300);
+        setTriggerSkill(1470);
+        settriggerExp1(1800);
+        settriggerExp2(1900);
+        settriggerExp3(2400);
+      }
+    };
+
+    updateTriggers();
+    window.addEventListener("resize", updateTriggers);
+
+    return () => window.removeEventListener("resize", updateTriggers);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > triggerPoint && !hasAnimated) {
+        setHasAnimated(true);
+      }
+
+      if (window.scrollY > triggerSkill && !hasAnimatedSkill) {
+        setHasAnimatedSkill(true);
+      }
+
+      if (window.scrollY > triggerExp1 && !hasAnimatedExp1) {
+        setHasAnimatedExp1(true);
+      }
+
+      if (window.scrollY > triggerExp2 && !hasAnimatedExp2) {
+        setHasAnimatedExp2(true);
+      }
+
+      if (window.scrollY > triggerExp3 && !hasAnimatedExp3) {
+        setHasAnimatedExp3(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [
+    triggerPoint,
+    hasAnimated,
+    triggerSkill,
+    hasAnimatedSkill,
+    triggerExp1,
+    hasAnimatedExp1,
+    triggerExp2,
+    hasAnimatedExp2,
+    triggerExp3,
+    hasAnimatedExp3,
+  ]);
+
   return (
     <>
-      <h1
-        data-aos="fade-up"
-        className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl"
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{
+          opacity: hasAnimated ? 1 : 0,
+          y: hasAnimated ? 0 : 50,
+        }}
+        transition={{ duration: 0.5 }}
       >
-        🎯Specialized Skills
-      </h1>
-      <p
-        data-aos="fade-up"
-        data-aos-delay="100"
-        className="w-[95%] pb-20 mx-auto text-left text-sm text-slate-500 md:text-base md:ml-8 lg:w-1/2"
+        <h1 className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl">
+          🎯Specialized Skills
+        </h1>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{
+          opacity: hasAnimated ? 1 : 0,
+          y: hasAnimated ? 0 : 50,
+        }}
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
-        With a solid foundation in both hardware and software, I excel in
-        integrating comprehensive technical knowledge with practical
-        applications to deliver robust and efficient solutions.
-      </p>
+        <p className="w-[95%] pb-20 mx-auto text-left text-sm text-slate-500 md:text-base md:ml-8 lg:w-1/2">
+          With a solid foundation in both hardware and software, I excel in
+          integrating comprehensive technical knowledge with practical
+          applications to deliver robust and efficient solutions.
+        </p>
+      </motion.div>
+
       <div className="w-[95%] mx-auto flex-wrap flex items-center justify-center gap-x-7 gap-y-16 pb-10 lg:justify-evenly lg:gap-0">
         {/* HTML */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            className="group relative flex flex-col items-center md:hidden"
-            onTouchStart={() => setIsTouchedHtml(true)}
-            onTouchEnd={() => setIsTouchedHtml(false)}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 
-          ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
-            >
-              <p>HTML</p>
-              <img
-                src={CaretDownIcon}
-                alt="Caret Down Icon"
-                className="invert-100"
-              />
-            </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
-                isTouchedHtml ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
-              }`}
+              className="group relative flex flex-col items-center md:hidden"
+              onTouchStart={() => setIsTouchedHtml(true)}
+              onTouchEnd={() => setIsTouchedHtml(false)}
             >
-              <img src={HtmlIcon} alt="HTML Icon" />
+              <span
+                className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 
+          ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              >
+                <p>HTML</p>
+                <img
+                  src={CaretDownIcon}
+                  alt="Caret Down Icon"
+                  className="invert-100"
+                />
+              </span>
+              <div
+                className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+                  isTouchedHtml ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+                }`}
+              >
+                <img src={HtmlIcon} alt="HTML Icon" />
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
-            className="group relative hidden flex-col items-center md:flex"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
-              <p>HTML</p>
-              <img
-                src={CaretDownIcon}
-                alt="Caret Down Icon"
-                className="invert-100"
-              />
-            </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
-              <img src={HtmlIcon} alt="HTML Icon" />
+            <div
+              data-aos-offset="300"
+              className="group relative hidden flex-col items-center md:flex"
+            >
+              <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+                <p>HTML</p>
+                <img
+                  src={CaretDownIcon}
+                  alt="Caret Down Icon"
+                  className="invert-100"
+                />
+              </span>
+              <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+                <img src={HtmlIcon} alt="HTML Icon" />
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* CSS */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="100"
-            className="group relative flex flex-col items-center md:hidden"
-            onTouchStart={() => setIsTouchedCss(true)}
-            onTouchEnd={() => setIsTouchedCss(false)}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedCss ? "-translate-y-10 opacity-100 delay-150" : ""}`}
-            >
-              <p>CSS</p>
-              <img
-                src={CaretDownIcon}
-                alt="Caret Down Icon"
-                className="invert-100"
-              />
-            </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
-                isTouchedCss ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
-              }`}
+              className="group relative flex flex-col items-center md:hidden"
+              onTouchStart={() => setIsTouchedCss(true)}
+              onTouchEnd={() => setIsTouchedCss(false)}
             >
-              <img src={CssIcon} alt="CSS Icon" />
+              <span
+                className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
+          ${isTouchedCss ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              >
+                <p>CSS</p>
+                <img
+                  src={CaretDownIcon}
+                  alt="Caret Down Icon"
+                  className="invert-100"
+                />
+              </span>
+              <div
+                className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+                  isTouchedCss ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
+                }`}
+              >
+                <img src={CssIcon} alt="CSS Icon" />
+              </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="group relative hidden flex-col items-center md:flex"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
-              <p>CSS</p>
-              <img
-                src={CaretDownIcon}
-                alt="Caret Down Icon"
-                className="invert-100"
-              />
-            </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
-              <img src={CssIcon} alt="CSS Icon" />
+            <div className="group relative hidden flex-col items-center md:flex">
+              <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+                <p>CSS</p>
+                <img
+                  src={CaretDownIcon}
+                  alt="Caret Down Icon"
+                  className="invert-100"
+                />
+              </span>
+              <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+                <img src={CssIcon} alt="CSS Icon" />
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* JavaScript */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="200"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedJs(true)}
             onTouchEnd={() => setIsTouchedJs(false)}
@@ -165,12 +292,16 @@ export default function Experience() {
             >
               <img src={JsIcon} alt="JavaScript Icon" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="100"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -184,15 +315,19 @@ export default function Experience() {
             <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={JsIcon} alt="JavaScript Icon" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Tailwind --> */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedTailwind(true)}
             onTouchEnd={() => setIsTouchedTailwind(false)}
@@ -215,11 +350,16 @@ export default function Experience() {
             >
               <img src={TailwindIcon} alt="Tailwind CSS Icon" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Deskop */}
-          <div
-            data-aos="fade-up"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5 }}
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -233,15 +373,19 @@ export default function Experience() {
             <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={TailwindIcon} alt="Tailwind CSS Icon" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* PHP */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedPhp(true)}
             onTouchEnd={() => setIsTouchedPhp(false)}
@@ -264,12 +408,16 @@ export default function Experience() {
             >
               <img src={PhpIcon} alt="PHP Icon" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="200"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -283,15 +431,19 @@ export default function Experience() {
             <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={PhpIcon} alt="PHP Icon" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Node JS */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="600"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedNode(true)}
             onTouchEnd={() => setIsTouchedNode(false)}
@@ -314,12 +466,16 @@ export default function Experience() {
             >
               <img src={NodeJsIcon} alt="Node Js Icon" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -333,15 +489,19 @@ export default function Experience() {
             <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={NodeJsIcon} alt="Node Js Icon" />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* React JS */}
         <div>
           {/* Mobile */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="700"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.7 }}
             className="group relative flex flex-col items-center md:hidden"
             onTouchStart={() => setIsTouchedReact(true)}
             onTouchEnd={() => setIsTouchedReact(false)}
@@ -364,12 +524,16 @@ export default function Experience() {
             >
               <img src={ReactIcon} alt="React Icon" />
             </div>
-          </div>
+          </motion.div>
 
           {/* Tablet, Desktop */}
-          <div
-            data-aos="fade-up"
-            data-aos-delay="400"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedSkill ? 1 : 0,
+              y: hasAnimatedSkill ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="group relative hidden flex-col items-center md:flex"
           >
             <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
@@ -383,33 +547,59 @@ export default function Experience() {
             <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
               <img src={ReactIcon} alt="React Icon" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
+
       <div className="pt-12 mt-10" id="experience">
-        <p data-aos="fade" className="text-xs text-center text-cyan-500">
-          Experience
-        </p>
-        <h1
-          data-aos="fade-up"
-          className="text-3xl font-bold text-center mb-5 md:text-6xl"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: hasAnimatedExp1 ? 1 : 0,
+          }}
+          transition={{ duration: 0.5 }}
         >
-          🏢Work Experiences
-        </h1>
-        <p
-          data-aos="fade-up"
-          className="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2"
+          <p className="text-xs text-center text-cyan-500">Experience</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{
+            opacity: hasAnimatedExp1 ? 1 : 0,
+            y: hasAnimatedExp1 ? 0 : 50,
+          }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Combining technical expertise with practical application, I have
-          successfully contributed to various roles, leveraging my skills in
-          computer engineering, networking, and web development to drive
-          impactful results.
-        </p>
+          <h1 className="text-3xl font-bold text-center mb-5 md:text-6xl">
+            🏢Work Experiences
+          </h1>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{
+            opacity: hasAnimatedExp1 ? 1 : 0,
+            y: hasAnimatedExp1 ? 0 : 50,
+          }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <p className="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2">
+            Combining technical expertise with practical application, I have
+            successfully contributed to various roles, leveraging my skills in
+            computer engineering, networking, and web development to drive
+            impactful results.
+          </p>
+        </motion.div>
 
         <div className="w-[95%] mx-auto flex flex-col items-center justify-center gap-10">
           {/* BNN Tangsel */}
-          <div
-            data-aos="fade-up"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedExp2 ? 1 : 0,
+              y: hasAnimatedExp2 ? 0 : 50,
+            }}
+            transition={{ duration: 0.5 }}
             className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-600 to-cyan-900 flex flex-col items-start justify-center md:flex-row"
           >
             <div className="flex justify-center items-start mt-7 w-[25%]">
@@ -445,11 +635,16 @@ export default function Experience() {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* BSA Land */}
-          <div
-            data-aos="fade-up"
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{
+              opacity: hasAnimatedExp3 ? 1 : 0,
+              y: hasAnimatedExp3 ? 0 : 50,
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
             className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-sky-800 to-cyan-600 flex flex-col items-start justify-center md:flex-row"
           >
             <div className="flex justify-center items-start mt-7 w-[25%]">
@@ -489,7 +684,7 @@ export default function Experience() {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

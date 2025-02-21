@@ -13,7 +13,48 @@ export default function Projects() {
   const [isTouchedRYS, setIsTouchedRYS] = useState(false);
   const [isTouchedRYG, setIsTouchedRYG] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [triggerPoint, setTriggerPoint] = useState(false);
+  const [hasAnimatedProject, setHasAnimatedProject] = useState(false);
+  const [triggerProject, settriggerProject] = useState(false);
+
+  useEffect(() => {
+    const updateTriggers = () => {
+      if (window.innerWidth < 768) {
+        // Mobile
+        setTriggerPoint(500);
+        settriggerProject(860);
+      } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+        // Tablet
+        setTriggerPoint(550);
+        settriggerProject(890);
+      } else {
+        // Desktop
+        setTriggerPoint(650);
+        settriggerProject(850);
+      }
+    };
+
+    updateTriggers();
+    window.addEventListener("resize", updateTriggers);
+
+    return () => window.removeEventListener("resize", updateTriggers);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > triggerPoint && !hasAnimated) {
+        setHasAnimated(true);
+      }
+
+      if (window.scrollY > triggerProject && !hasAnimatedProject) {
+        setHasAnimatedProject(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [triggerPoint, hasAnimated, triggerProject, hasAnimatedProject]);
 
   const projects = [
     {
@@ -48,33 +89,42 @@ export default function Projects() {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
       <div
         id="projects-section"
         className="flex flex-col items-center justify-center"
       >
-        <div data-aos="fade">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+          }}
+          transition={{ duration: 0.5 }}
+        >
           <h5 className="text-xs text-cyan-500 font-semibold">Projects</h5>
-        </div>
+        </motion.div>
 
-        <div data-aos="fade-up">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+            y: hasAnimated ? 0 : 30,
+          }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
           <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
             🚀Highlight Projects
           </h1>
-        </div>
+        </motion.div>
 
-        <div
-          data-aos="fade-up"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+            y: hasAnimated ? 0 : 30,
+          }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="w-[90%] pb-20 text-center text-sm text-slate-500 md:text-base md:w-1/2"
         >
           <p>
@@ -82,7 +132,7 @@ export default function Projects() {
             successful projects, I have consistently delivered innovative and
             efficient solutions in both web development and networking.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Container Proyek */}
@@ -93,10 +143,10 @@ export default function Projects() {
             key={index}
             href={project.href}
             target="_blank"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{
-              opacity: scrollY > 900 ? 1 : 0,
-              y: scrollY > 900 ? 0 : 20,
+              opacity: hasAnimatedProject ? 1 : 0,
+              y: hasAnimatedProject ? 0 : 50,
             }}
             transition={{ duration: 0.3, delay: index * 0.2 }}
             className="flex items-center justify-center w-full"
@@ -152,12 +202,11 @@ export default function Projects() {
                 key={index + 6}
                 href={project.href}
                 target="_blank"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 50 }}
                 animate={{
-                  opacity: scrollY > 800 ? 1 : 0,
-                  y: scrollY > 800 ? 0 : 20,
+                  opacity: hasAnimatedProject ? 1 : 0,
+                  y: hasAnimatedProject ? 0 : 50,
                 }}
-                exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.3, delay: index * 0.2 }}
                 className="flex items-center justify-center w-full"
                 onTouchStart={() => {

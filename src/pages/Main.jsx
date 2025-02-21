@@ -1,6 +1,4 @@
-import { useEffect, useRef } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import About from "../components/About";
@@ -17,6 +15,7 @@ export default function Main() {
   const projectsRef = useRef(null);
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
+  const [scrollY, setScrollY] = useState(0);
 
   const sections = [
     { name: "Profile", ref: profileRef },
@@ -39,13 +38,15 @@ export default function Main() {
   };
 
   useEffect(() => {
-    AOS.init({
-      once: true,
-      offset: 250,
-      duration: 500,
-    });
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
 
-    AOS.refresh();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -61,6 +62,10 @@ export default function Main() {
       </div>
 
       <div className="relative text-white">
+        <div className="fixed z-50 top-5 right-5 bg-black text-white p-2 rounded">
+          ScrollY: {scrollY}
+        </div>
+
         <Navbar sections={sections} />
 
         {/* Profile Section */}

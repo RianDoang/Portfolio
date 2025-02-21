@@ -1,4 +1,5 @@
 import { useState, Suspense, lazy } from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import RotatingText from "../components/animation/RotatingText";
 import GmailIcon from "../assets/Experience/profile/Gmail.svg";
@@ -26,11 +27,25 @@ export default function Profile({ handleContactClick }) {
     <>
       <div className="w-full text-slate-50 lg:w-1/2">
         <div className="text-[22px] font-medium flex items-center gap-2 md:text-2xl">
-          <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
             <h1>I&apos;m a</h1>
-          </div>
+          </motion.div>
 
-          <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 0.5 }}
+          >
             <RotatingText
               texts={[
                 "Front-End Developer",
@@ -47,27 +62,43 @@ export default function Profile({ handleContactClick }) {
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
               rotationInterval={2500}
             />
-          </div>
+          </motion.div>
         </div>
         <div>
-          <div data-aos="fade-up" data-aos-delay="900" data-aos-duration="700">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 0.9 }}
+          >
             <h1 className="text-4xl font-bold md:text-6xl">Muhamad Riansyah</h1>
-          </div>
+          </motion.div>
 
-          <div data-aos="fade-up" data-aos-delay="1100" data-aos-duration="700">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 1.1 }}
+          >
             <p className="text-slate-500 mt-3 text-sm">
               Call me Rian, graduated from SMK Letris Indonesia 1 majoring in
               Computer and Network Engineering which I chose for the 2021/2024
               period.
             </p>
-          </div>
+          </motion.div>
         </div>
         <div className="flex gap-7 mt-7">
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1500"
-            data-aos-duration="700"
-            data-aos-offset="0"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 1.5 }}
           >
             {/* Gmail */}
             <button
@@ -85,13 +116,15 @@ export default function Profile({ handleContactClick }) {
                 <img src={GmailIcon} alt="Gmail Icon" />
               </div>
             </button>
-          </div>
+          </motion.div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1600"
-            data-aos-duration="700"
-            data-aos-offset="0"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 1.6 }}
           >
             {/* Github */}
             <a
@@ -110,13 +143,15 @@ export default function Profile({ handleContactClick }) {
                 <img src={GithubIcon} alt="Github Icon" />
               </div>
             </a>
-          </div>
+          </motion.div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="1700"
-            data-aos-duration="700"
-            data-aos-offset="0"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.4, delay: 1.7 }}
           >
             {/* Linkeind */}
             <a
@@ -134,13 +169,16 @@ export default function Profile({ handleContactClick }) {
                 <img src={Linkedincon} alt="Linkedin Icon" />
               </div>
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-delay="1300"
-        data-aos-duration="700"
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.4, delay: 1.3 }}
         className="flex-1 flex items-center justify-center md:justify-end"
       >
         <Suspense>
@@ -151,7 +189,7 @@ export default function Profile({ handleContactClick }) {
             <ProfileMobileAnim />
           </div>
         </Suspense>
-      </div>
+      </motion.div>
     </>
   );
 }

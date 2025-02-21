@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Ripples from "react-ripples";
 import emailjs from "@emailjs/browser";
 
@@ -8,6 +9,49 @@ export default function Contact() {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "", visible: false });
+
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const [triggerPoint, setTriggerPoint] = useState(false);
+  const [hasAnimatedForm, setHasAnimatedForm] = useState(false);
+  const [triggerForm, setTriggerForm] = useState(false);
+
+  useEffect(() => {
+    const updateTriggers = () => {
+      if (window.innerWidth < 768) {
+        // Mobile
+        setTriggerPoint(4135);
+        setTriggerForm(4444);
+      } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+        // Tablet
+        setTriggerPoint(3280);
+        setTriggerForm(3520);
+      } else {
+        // Desktop
+        setTriggerPoint(2950);
+        setTriggerForm(3150);
+      }
+    };
+
+    updateTriggers();
+    window.addEventListener("resize", updateTriggers);
+
+    return () => window.removeEventListener("resize", updateTriggers);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > triggerPoint && !hasAnimated) {
+        setHasAnimated(true);
+      }
+
+      if (window.scrollY > triggerForm && !hasAnimatedForm) {
+        setHasAnimatedForm(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [triggerPoint, hasAnimated, triggerForm, hasAnimatedForm]);
 
   const handleMouseMove = (e) => {
     setPosition({ x: e.clientX, y: e.clientY });
@@ -67,32 +111,45 @@ export default function Contact() {
   return (
     <>
       <div className="py-10">
-        <h5
-          data-aos="fade"
-          data-aos-duration="700"
-          data-aos-offset="350"
-          className="text-xs text-cyan-500 font-semibold text-center"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+          }}
+          transition={{ duration: 0.5 }}
         >
-          Contact
-        </h5>
-        <h1
-          data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-offset="350"
-          className="text-3xl font-bold pb-5 text-center md:text-6xl"
+          <h5 className="text-xs text-cyan-500 font-semibold text-center">
+            Contact
+          </h5>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+            y: hasAnimated ? 0 : 50,
+          }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          👋Let&apos;s get connected!
-        </h1>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="700"
-          data-aos-offset="350"
-          className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2"
+          <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
+            👋Let&apos;s get connected!
+          </h1>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{
+            opacity: hasAnimated ? 1 : 0,
+            y: hasAnimated ? 0 : 50,
+          }}
+          transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Feel free to reach out if you’re interested in collaborating on a
-          project, have any questions, or just want to connect. I’m always open
-          to new opportunities and conversations!
-        </p>
+          <p className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2">
+            Feel free to reach out if you’re interested in collaborating on a
+            project, have any questions, or just want to connect. I’m always
+            open to new opportunities and conversations!
+          </p>
+        </motion.div>
 
         <form
           className="w-[90%] mx-auto"
@@ -148,15 +205,30 @@ export default function Contact() {
 
           <div className="w-full lg:mx-auto lg:w-3/4">
             <div className="mb-8 w-full px-4">
-              <div data-aos="fade-up">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5 }}
+              >
                 <label
                   htmlFor="from_name"
                   className="text-base font-bold text-cyan-500"
                 >
                   Name
                 </label>
-              </div>
-              <div data-aos="fade-up">
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
                 <input
                   placeholder="Your Name"
                   name="from_name"
@@ -166,19 +238,34 @@ export default function Contact() {
                   className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                   required
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="mb-8 w-full px-4">
-              <div data-aos="fade-up">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
                 <label
                   htmlFor="email"
                   className="text-base font-bold text-cyan-500"
                 >
                   Email
                 </label>
-              </div>
-              <div data-aos="fade-up">
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <input
                   placeholder="Your Email"
                   type="email"
@@ -188,19 +275,34 @@ export default function Contact() {
                   className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                   required
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="mb-8 w-full px-4">
-              <div data-aos="fade-up">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 <label
                   htmlFor="message"
                   className="text-base font-bold text-cyan-500"
                 >
                   Message
                 </label>
-              </div>
-              <div data-aos="fade-up">
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <textarea
                   placeholder="Message"
                   name="message"
@@ -210,14 +312,17 @@ export default function Contact() {
                   className="w-full h-40 mt-1 p-3 placeholder:text-sm border rounded-md transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
                   required
                 ></textarea>
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full px-4" id="btnKirim">
-              <div
-                data-aos="fade-up"
-                data-aos-duration="700"
-                data-aos-offset="250"
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{
+                  opacity: hasAnimatedForm ? 1 : 0,
+                  y: hasAnimatedForm ? 0 : 50,
+                }}
+                transition={{ duration: 0.5, delay: 0.6 }}
                 className="w-full"
               >
                 <Ripples className="w-full inline-block" during={2000}>
@@ -261,7 +366,7 @@ export default function Contact() {
                     </span>
                   </button>
                 </Ripples>
-              </div>
+              </motion.div>
 
               <div
                 className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${

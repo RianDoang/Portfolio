@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import "../input.css";
 
@@ -119,8 +120,13 @@ export default function Navbar({ sections }) {
       </div>
 
       {/* Menu Navigation */}
-      <div
-        data-aos="fade-down"
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{ duration: 0.5 }}
         className="md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2"
       >
         <div
@@ -154,7 +160,7 @@ export default function Navbar({ sections }) {
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 }
