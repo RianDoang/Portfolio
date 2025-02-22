@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Navbar from "../components/Navbar";
 import Profile from "../components/Profile";
 import About from "../components/About";
@@ -15,7 +15,6 @@ export default function Main() {
   const projectsRef = useRef(null);
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
-  const [scrollY, setScrollY] = useState(0);
 
   const sections = [
     { name: "Profile", ref: profileRef },
@@ -37,18 +36,6 @@ export default function Main() {
     history.replaceState(null, "", "");
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div>
       <div className="fixed top-0 left-0 w-full h-screen pointer-events-none -z-10">
@@ -62,10 +49,6 @@ export default function Main() {
       </div>
 
       <div className="relative text-white">
-        <div className="fixed z-50 top-5 right-5 bg-black text-white p-2 rounded">
-          ScrollY: {scrollY}
-        </div>
-
         <Navbar sections={sections} />
 
         {/* Profile Section */}
