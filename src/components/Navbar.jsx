@@ -132,8 +132,7 @@ export default function Navbar({ sections }) {
         <div
           id="navMenu"
           ref={navMenuRef}
-          className={`absolute top-16 right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out 
-          md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
+          className={`absolute top-16 right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out md:top-10 md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
           hidden -translate-y-4 opacity-0
           ${shadowStyle}`}
         >
