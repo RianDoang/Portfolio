@@ -7,6 +7,7 @@ import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 import QRProject from "../assets/projects/QRMe.png";
 import RYStore from "../assets/projects/RealmYoke-Store.png";
 import RYGames from "../assets/projects/RealmYoke-Games.png";
+import FollGone from "../assets/projects/FollGone.png";
 
 export default function Projects() {
   const [isTouchedQR, setIsTouchedQR] = useState(false);
@@ -76,6 +77,13 @@ export default function Projects() {
       imgSrc: RYGames,
       imgAlt: "RealmYoke Games Projects",
       title: "RealmYoke Games",
+      technologies: [TailwindIcon, ReactIcon],
+    },
+    {
+      href: "https://follgone.vercel.app/",
+      imgSrc: FollGone,
+      imgAlt: "FollGone Projects",
+      title: "FollGone",
       technologies: [TailwindIcon, ReactIcon],
     },
   ];
