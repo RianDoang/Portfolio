@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 const AboutAnim = lazy(() =>
   import("../components/animation/Animation").then((module) => ({
     default: module.AboutAnim,
-  }))
+  })),
 );
 
 export default function About() {
   const [hasAnimated, setHasAnimated] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(false);
-  
+
   useEffect(() => {
     const updateTriggers = () => {
       if (window.innerWidth < 768) {
@@ -53,8 +53,8 @@ export default function About() {
           }}
           transition={{ duration: 0.3 }}
         >
-          <h1 className="mx-5 pb-4 font-semibold text-4xl md:pb-8 md:text-6xl">
-            👨‍💻About Me
+          <h1 className="pb-4 text-3xl font-semibold sm:text-5xl md:pb-8 md:text-6xl">
+            👨‍💻 About Me
           </h1>
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function About() {
           }}
           transition={{ duration: 0.3, delay: 0.1 }}
         >
-          <p className="mx-5 text-sm text-slate-300 md:text-base">
+          <p className="text-justify text-sm text-slate-300 sm:text-base md:text-left">
             I&apos;m a Computer Engineering and Networking graduate with a
             passion for web development. I specialize in creating dynamic and
             user-friendly websites using HTML, CSS, and JavaScript. My

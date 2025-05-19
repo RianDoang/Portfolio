@@ -9,13 +9,13 @@ import Linkedincon from "../assets/Experience/profile/Linkedin.svg";
 const ProfileAnim = lazy(() =>
   import("../components/animation/Animation").then((module) => ({
     default: module.ProfileAnim,
-  }))
+  })),
 );
 
 const ProfileMobileAnim = lazy(() =>
   import("../components/animation/Animation").then((module) => ({
     default: module.ProfileMobileAnim,
-  }))
+  })),
 );
 
 export default function Profile({ handleContactClick }) {
@@ -26,7 +26,7 @@ export default function Profile({ handleContactClick }) {
   return (
     <>
       <div className="w-full text-slate-50 lg:w-1/2">
-        <div className="text-[22px] font-medium flex items-center gap-2 md:text-2xl">
+        <div className="mb-5 flex flex-col items-start gap-0 text-[22px] font-medium sm:mb-0 sm:flex-row sm:items-center sm:gap-2 sm:text-2xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{
@@ -73,7 +73,9 @@ export default function Profile({ handleContactClick }) {
             }}
             transition={{ duration: 0.4, delay: 0.9 }}
           >
-            <h1 className="text-4xl font-bold md:text-6xl">Muhamad Riansyah</h1>
+            <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl">
+              Muhamad Riansyah
+            </h1>
           </motion.div>
 
           <motion.div
@@ -84,14 +86,14 @@ export default function Profile({ handleContactClick }) {
             }}
             transition={{ duration: 0.4, delay: 1.1 }}
           >
-            <p className="text-slate-500 mt-3 text-sm">
+            <p className="mt-3 text-sm text-slate-500">
               Call me Rian, graduated from SMK Letris Indonesia 1 majoring in
               Computer and Network Engineering which I chose for the 2021/2024
               period.
             </p>
           </motion.div>
         </div>
-        <div className="flex gap-7 mt-7">
+        <div className="mt-7 flex gap-7">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{
@@ -107,10 +109,10 @@ export default function Profile({ handleContactClick }) {
               onTouchEnd={() => setIsTouchedGmail(false)}
             >
               <div
-                className={`w-10 h-10 flex items-center justify-center p-1 rounded-lg cursor-pointer transition duration-300 ease-in-out bg-slate-300 hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700 ${
+                className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-slate-300 p-1 transition duration-300 ease-in-out hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700 sm:h-10 sm:w-10 ${
                   isTouchedGmail
-                    ? "rotate-3 scale-110 shadow-md shadow-slate-700"
-                    : "hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700"
+                    ? "scale-110 rotate-3 shadow-md shadow-slate-700"
+                    : "hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700"
                 }`}
               >
                 <img src={GmailIcon} alt="Gmail Icon" />
@@ -134,10 +136,10 @@ export default function Profile({ handleContactClick }) {
               onTouchEnd={() => setIsTouchedGithub(false)}
             >
               <div
-                className={`w-10 h-10 flex items-center justify-center p-1 rounded-lg transition duration-300 ease-in-out bg-slate-300 hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700 ${
+                className={`flex h-9 w-9 items-center justify-center rounded-lg bg-slate-300 p-1 transition duration-300 ease-in-out hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700 sm:h-10 sm:w-10 ${
                   isTouchedGithub
-                    ? "rotate-3 scale-110 shadow-md shadow-slate-700"
-                    : "hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700"
+                    ? "scale-110 rotate-3 shadow-md shadow-slate-700"
+                    : "hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700"
                 }`}
               >
                 <img src={GithubIcon} alt="Github Icon" />
@@ -155,15 +157,16 @@ export default function Profile({ handleContactClick }) {
           >
             {/* Linkeind */}
             <a
-              href="#"
+              href="https://linkedin.com/in/muhamad-riansyah"
+              target="_blank"
               onTouchStart={() => setIsTouchedLinkedin(true)}
               onTouchEnd={() => setIsTouchedLinkedin(false)}
             >
               <div
-                className={`w-10 h-10 flex items-center justify-center p-1 rounded-lg transition duration-300 ease-in-out bg-slate-300 hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700 ${
+                className={`flex h-9 w-9 items-center justify-center rounded-lg bg-slate-300 p-1 transition duration-300 ease-in-out hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700 sm:h-10 sm:w-10 ${
                   isTouchedLinkedin
-                    ? "rotate-3 scale-110 shadow-md shadow-slate-700"
-                    : "hover:rotate-3 hover:scale-110 hover:shadow-md hover:shadow-slate-700"
+                    ? "scale-110 rotate-3 shadow-md shadow-slate-700"
+                    : "hover:scale-110 hover:rotate-3 hover:shadow-md hover:shadow-slate-700"
                 }`}
               >
                 <img src={Linkedincon} alt="Linkedin Icon" />
@@ -179,7 +182,7 @@ export default function Profile({ handleContactClick }) {
           y: 0,
         }}
         transition={{ duration: 0.4, delay: 1.3 }}
-        className="flex-1 flex items-center justify-center md:justify-end"
+        className="flex flex-1 items-center justify-center md:justify-end"
       >
         <Suspense>
           <div className="hidden md:flex">

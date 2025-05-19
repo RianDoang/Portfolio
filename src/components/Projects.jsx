@@ -13,6 +13,7 @@ export default function Projects() {
   const [isTouchedQR, setIsTouchedQR] = useState(false);
   const [isTouchedRYS, setIsTouchedRYS] = useState(false);
   const [isTouchedRYG, setIsTouchedRYG] = useState(false);
+  const [isTouchedFG, setIsTouchedFG] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(false);
@@ -110,7 +111,7 @@ export default function Projects() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <h5 className="text-xs text-cyan-500 font-semibold">Projects</h5>
+          <h5 className="text-xs font-semibold text-cyan-500">Projects</h5>
         </motion.div>
 
         <motion.div
@@ -121,8 +122,8 @@ export default function Projects() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
-            🚀Highlight Projects
+          <h1 className="pb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+            🚀 Highlight Projects
           </h1>
         </motion.div>
 
@@ -133,7 +134,7 @@ export default function Projects() {
             y: hasAnimated ? 0 : 30,
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-[90%] pb-20 text-center text-sm text-slate-500 md:text-base md:w-1/2"
+          className="w-[90%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2"
         >
           <p>
             Demonstrating my ability to turn complex technical requirements into
@@ -144,7 +145,7 @@ export default function Projects() {
       </div>
 
       {/* Container Proyek */}
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:w-[95%] mx-auto">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {/* 6 Proyek Awal */}
         {projects.slice(0, 6).map((project, index) => (
           <motion.a
@@ -157,44 +158,46 @@ export default function Projects() {
               y: hasAnimatedProject ? 0 : 50,
             }}
             transition={{ duration: 0.3, delay: index * 0.2 }}
-            className="flex items-center justify-center w-full"
+            className="flex w-full items-center justify-center"
             onTouchStart={() => {
               if (index === 0) setIsTouchedQR(true);
               if (index === 1) setIsTouchedRYS(true);
               if (index === 2) setIsTouchedRYG(true);
+              if (index === 3) setIsTouchedFG(true);
             }}
             onTouchEnd={() => {
               if (index === 0) setIsTouchedQR(false);
               if (index === 1) setIsTouchedRYS(false);
               if (index === 2) setIsTouchedRYG(false);
+              if (index === 3) setIsTouchedFG(false);
             }}
           >
             <div
-              className={`w-4/5 flex flex-col justify-center p-2 rounded transition duration-150 bg-slate-900 lg:w-auto
-                ${
-                  (index === 0 && isTouchedQR) ||
-                  (index === 1 && isTouchedRYS) ||
-                  (index === 2 && isTouchedRYG)
-                    ? "scale-[1.03] shadow-lg shadow-slate-700"
-                    : "shadow-sm shadow-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:scale-[1.03]"
-                }`}
+              className={`flex w-[90%] flex-col justify-center rounded bg-slate-900 p-2 transition duration-150 lg:w-auto ${
+                (index === 0 && isTouchedQR) ||
+                (index === 1 && isTouchedRYS) ||
+                (index === 2 && isTouchedRYG) ||
+                (index === 3 && isTouchedFG)
+                  ? "scale-[1.03] shadow-lg shadow-slate-700"
+                  : "shadow-sm shadow-slate-800 hover:scale-[1.03] hover:shadow-lg hover:shadow-slate-700"
+              }`}
             >
               <img
-                className="rounded-sm mb-3"
+                className="mb-3 rounded-sm"
                 src={project.imgSrc}
                 alt={project.imgAlt}
               />
-              <h3 className="ml-2 mb-1 text-xl font-semibold">
+              <h3 className="mb-1 ml-2 text-xl font-semibold">
                 {project.title}
               </h3>
-              <p className="text-sm ml-2 my-2 flex items-center gap-2">
+              <p className="my-2 ml-2 flex items-center gap-2 text-sm">
                 Technology:
                 {project.technologies.map((tech, techIndex) => (
                   <img
                     key={techIndex}
                     src={tech}
                     alt="Technology Icon"
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                   />
                 ))}
               </p>
@@ -216,44 +219,46 @@ export default function Projects() {
                   y: hasAnimatedProject ? 0 : 50,
                 }}
                 transition={{ duration: 0.3, delay: index * 0.2 }}
-                className="flex items-center justify-center w-full"
+                className="flex w-full items-center justify-center"
                 onTouchStart={() => {
                   if (index === 0) setIsTouchedQR(true);
                   if (index === 1) setIsTouchedRYS(true);
                   if (index === 2) setIsTouchedRYG(true);
+                  if (index === 3) setIsTouchedFG(true);
                 }}
                 onTouchEnd={() => {
                   if (index === 0) setIsTouchedQR(false);
                   if (index === 1) setIsTouchedRYS(false);
                   if (index === 2) setIsTouchedRYG(false);
+                  if (index === 3) setIsTouchedFG(false);
                 }}
               >
                 <div
-                  className={`w-4/5 flex flex-col justify-center p-2 rounded transition duration-150 bg-slate-900 lg:w-auto
-                ${
-                  (index === 0 && isTouchedQR) ||
-                  (index === 1 && isTouchedRYS) ||
-                  (index === 2 && isTouchedRYG)
-                    ? "scale-[1.03] shadow-lg shadow-slate-700"
-                    : "shadow-sm shadow-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:scale-[1.03]"
-                }`}
+                  className={`flex w-4/5 flex-col justify-center rounded bg-slate-900 p-2 transition duration-150 lg:w-auto ${
+                    (index === 0 && isTouchedQR) ||
+                    (index === 1 && isTouchedRYS) ||
+                    (index === 2 && isTouchedRYG) ||
+                    (index === 3 && isTouchedFG)
+                      ? "scale-[1.03] shadow-lg shadow-slate-700"
+                      : "shadow-sm shadow-slate-800 hover:scale-[1.03] hover:shadow-lg hover:shadow-slate-700"
+                  }`}
                 >
                   <img
-                    className="rounded-sm mb-3"
+                    className="mb-3 rounded-sm"
                     src={project.imgSrc}
                     alt={project.imgAlt}
                   />
-                  <h3 className="ml-2 mb-1 text-xl font-semibold">
+                  <h3 className="mb-1 ml-2 text-xl font-semibold">
                     {project.title}
                   </h3>
-                  <p className="text-sm ml-2 my-2 flex items-center gap-2">
+                  <p className="my-2 ml-2 flex items-center gap-2 text-sm">
                     Technology:
                     {project.technologies.map((tech, techIndex) => (
                       <img
                         key={techIndex}
                         src={tech}
                         alt="Technology Icon"
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                       />
                     ))}
                   </p>
@@ -265,15 +270,15 @@ export default function Projects() {
 
       {/* Tombol Show More */}
       {projects.length > 6 && (
-        <div className="w-full flex items-center mt-14">
-          <div className="flex-grow h-[0.5px] bg-slate-500/50"></div>
+        <div className="mt-14 flex w-full items-center">
+          <div className="h-[0.5px] flex-grow bg-slate-500/50"></div>
           <button
             onClick={handleShowMoreClick}
-            className="px-4 py-2 rounded cursor-pointer transition border border-slate-500/50 bg-transparent text-white hover:bg-slate-500/20"
+            className="cursor-pointer rounded border border-slate-500/50 bg-transparent px-4 py-2 text-white transition hover:bg-slate-500/20"
           >
             {showAll ? "Show Less" : "Show More"}
           </button>
-          <div className="flex-grow h-[0.5px] bg-slate-500/50"></div>
+          <div className="h-[0.5px] flex-grow bg-slate-500/50"></div>
         </div>
       )}
     </>

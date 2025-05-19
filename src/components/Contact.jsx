@@ -80,7 +80,7 @@ export default function Contact() {
         "service_zik0kzm",
         "template_p921x97",
         form.current,
-        "QG2TZtjMy86-9GdFM"
+        "QG2TZtjMy86-9GdFM",
       );
 
       setIsSent(true);
@@ -118,7 +118,7 @@ export default function Contact() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <h5 className="text-xs text-cyan-500 font-semibold text-center">
+          <h5 className="text-center text-xs font-semibold text-cyan-500">
             Contact
           </h5>
         </motion.div>
@@ -131,8 +131,8 @@ export default function Contact() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="text-3xl font-bold pb-5 text-center md:text-6xl">
-            👋Let&apos;s get connected!
+          <h1 className="pb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+            👋 Let&apos;s get in!
           </h1>
         </motion.div>
 
@@ -144,7 +144,7 @@ export default function Contact() {
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="w-[90%] mx-auto text-center text-slate-500 pb-20 text-sm md:text-base lg:w-1/2">
+          <p className="mx-auto w-[90%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2">
             Feel free to reach out if you’re interested in collaborating on a
             project, have any questions, or just want to connect. I’m always
             open to new opportunities and conversations!
@@ -152,16 +152,16 @@ export default function Contact() {
         </motion.div>
 
         <form
-          className="w-[90%] mx-auto"
+          className="mx-auto w-[90%]"
           id="contactForm"
           ref={form}
           onSubmit={sendEmail}
         >
           {/* Alert */}
           {alert.visible && (
-            <div className="w-full px-4 mb-8 lg:mx-auto lg:w-3/4">
+            <div className="mb-8 w-full px-0 lg:mx-auto lg:w-3/4 lg:px-4">
               <div
-                className={`items-center justify-between py-3 px-4 rounded bg-slate-700 ${
+                className={`items-center justify-between rounded bg-slate-700 px-4 py-3 ${
                   alert.type === "error"
                     ? "flex text-red-400"
                     : "flex text-green-500"
@@ -169,7 +169,7 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-3">
                   <svg
-                    className="flex-shrink-0 w-4 h-4"
+                    className="h-4 w-4 flex-shrink-0"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
@@ -180,11 +180,11 @@ export default function Contact() {
                   <span className="font-medium">{alert.message}</span>
                 </div>
                 <div
-                  className="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-slate-600"
+                  className="cursor-pointer rounded-md bg-transparent p-3 transition duration-150 hover:bg-slate-600"
                   onClick={handleCloseAlert}
                 >
                   <svg
-                    className="w-3 h-3"
+                    className="h-3 w-3"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -204,7 +204,7 @@ export default function Contact() {
           )}
 
           <div className="w-full lg:mx-auto lg:w-3/4">
-            <div className="mb-8 w-full px-4">
+            <div className="mb-8 w-full px-0 lg:px-4">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
@@ -235,13 +235,13 @@ export default function Contact() {
                   type="text"
                   id="from_name"
                   spellCheck="false"
-                  className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  className="focus:ring-opacity-50 mt-1 w-full rounded-md border bg-slate-200 p-3 text-slate-950 transition duration-200 placeholder:text-sm focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none md:placeholder:text-base"
                   required
                 />
               </motion.div>
             </div>
 
-            <div className="mb-8 w-full px-4">
+            <div className="mb-8 w-full px-0 lg:px-4">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
@@ -272,13 +272,13 @@ export default function Contact() {
                   id="email"
                   name="email"
                   spellCheck="false"
-                  className="w-full mt-1 p-3 border rounded-md placeholder:text-sm transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  className="focus:ring-opacity-50 mt-1 w-full rounded-md border bg-slate-200 p-3 text-slate-950 transition duration-200 placeholder:text-sm focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none md:placeholder:text-base"
                   required
                 />
               </motion.div>
             </div>
 
-            <div className="mb-8 w-full px-4">
+            <div className="mb-8 w-full px-0 lg:px-4">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
@@ -309,13 +309,13 @@ export default function Contact() {
                   type="text"
                   id="message"
                   spellCheck="false"
-                  className="w-full h-40 mt-1 p-3 placeholder:text-sm border rounded-md transition duration-200 bg-slate-200 text-slate-950 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 focus:ring-opacity-50 md:placeholder:text-base"
+                  className="focus:ring-opacity-50 mt-1 h-40 w-full rounded-md border bg-slate-200 p-3 text-slate-950 transition duration-200 placeholder:text-sm focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 focus:outline-none md:placeholder:text-base"
                   required
                 ></textarea>
               </motion.div>
             </div>
 
-            <div className="w-full px-4" id="btnKirim">
+            <div className="w-full px-0 lg:px-4" id="btnKirim">
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
@@ -325,13 +325,13 @@ export default function Contact() {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="w-full"
               >
-                <Ripples className="w-full inline-block" during={2000}>
+                <Ripples className="inline-block w-full" during={2000}>
                   <button
                     onMouseEnter={() => setIsVisible(true)}
                     onMouseLeave={() => setIsVisible(false)}
                     onMouseMove={handleMouseMove}
                     type="submit"
-                    className="btnKirim w-full rounded-full bg-cyan-500 h-12 px-8 text-base font-semibold cursor-pointer text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+                    className="btnKirim h-12 w-full cursor-pointer rounded-full bg-cyan-500 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
                     disabled={isSending}
                   >
                     <span
@@ -347,11 +347,11 @@ export default function Contact() {
                       className={`transform ${
                         isSending ? "flex" : "hidden"
                       } items-center justify-center gap-1 ${fadeInOutClass(
-                        isSending
+                        isSending,
                       )}`}
                     >
                       <div
-                        className="inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                        className="text-surface inline-block h-5 w-5 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                         role="status"
                       ></div>
                       Sending data...
@@ -369,8 +369,8 @@ export default function Contact() {
               </motion.div>
 
               <div
-                className={`absolute bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg transition-opacity duration-300 ease-in-out ${
-                  isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                className={`absolute rounded bg-gray-800 px-2 py-1 text-xs text-white shadow-lg transition-opacity duration-300 ease-in-out ${
+                  isVisible ? "scale-100 opacity-100" : "scale-90 opacity-0"
                 }`}
                 style={{
                   top: position.y + 10, // Tooltip muncul sedikit di bawah kursor

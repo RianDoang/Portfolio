@@ -112,8 +112,8 @@ export default function Experience() {
         }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="text-3xl ml-4 font-bold text-left mb-5 md:text-6xl">
-          🎯Specialized Skills
+        <h1 className="mb-5 text-left text-3xl font-semibold sm:text-5xl md:text-6xl">
+          🎯 Specialized Skills
         </h1>
       </motion.div>
 
@@ -125,14 +125,14 @@ export default function Experience() {
         }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <p className="w-[95%] pb-20 mx-auto text-left text-sm text-slate-500 md:text-base md:ml-8 lg:w-1/2">
+        <p className="pb-20 text-justify text-sm text-slate-500 sm:text-base md:text-left lg:w-1/2">
           With a solid foundation in both hardware and software, I excel in
           integrating comprehensive technical knowledge with practical
           applications to deliver robust and efficient solutions.
         </p>
       </motion.div>
 
-      <div className="w-[95%] mx-auto flex-wrap flex items-center justify-center gap-x-7 gap-y-16 pb-10 lg:justify-evenly lg:gap-0">
+      <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-16 pb-10 lg:justify-evenly lg:gap-0">
         {/* HTML */}
         <div>
           {/* Mobile */}
@@ -150,8 +150,7 @@ export default function Experience() {
               onTouchEnd={() => setIsTouchedHtml(false)}
             >
               <span
-                className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 
-          ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+                className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedHtml ? "-translate-y-10 opacity-100 delay-150" : ""}`}
               >
                 <p>HTML</p>
                 <img
@@ -161,7 +160,7 @@ export default function Experience() {
                 />
               </span>
               <div
-                className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+                className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                   isTouchedHtml ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
                 }`}
               >
@@ -183,7 +182,7 @@ export default function Experience() {
               data-aos-offset="300"
               className="group relative hidden flex-col items-center md:flex"
             >
-              <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+              <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
                 <p>HTML</p>
                 <img
                   src={CaretDownIcon}
@@ -191,7 +190,7 @@ export default function Experience() {
                   className="invert-100"
                 />
               </span>
-              <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+              <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
                 <img src={HtmlIcon} alt="HTML Icon" />
               </div>
             </div>
@@ -215,8 +214,7 @@ export default function Experience() {
               onTouchEnd={() => setIsTouchedCss(false)}
             >
               <span
-                className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedCss ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+                className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedCss ? "-translate-y-10 opacity-100 delay-150" : ""}`}
               >
                 <p>CSS</p>
                 <img
@@ -226,7 +224,7 @@ export default function Experience() {
                 />
               </span>
               <div
-                className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+                className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                   isTouchedCss ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
                 }`}
               >
@@ -245,7 +243,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="group relative hidden flex-col items-center md:flex">
-              <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+              <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
                 <p>CSS</p>
                 <img
                   src={CaretDownIcon}
@@ -253,7 +251,7 @@ export default function Experience() {
                   className="invert-100"
                 />
               </span>
-              <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+              <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
                 <img src={CssIcon} alt="CSS Icon" />
               </div>
             </div>
@@ -275,8 +273,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedJs(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedJs ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedJs ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>JavaScript</p>
               <img
@@ -286,7 +283,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+              className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                 isTouchedJs ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -304,7 +301,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="group relative hidden flex-col items-center md:flex"
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
               <p>JavaScript</p>
               <img
                 src={CaretDownIcon}
@@ -312,7 +309,7 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+            <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
               <img src={JsIcon} alt="JavaScript Icon" />
             </div>
           </motion.div>
@@ -333,8 +330,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedTailwind(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedTailwind ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedTailwind ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>Tailwind CSS</p>
               <img
@@ -344,7 +340,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+              className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                 isTouchedTailwind ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -362,7 +358,7 @@ export default function Experience() {
             transition={{ duration: 0.5 }}
             className="group relative hidden flex-col items-center md:flex"
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
               <p>Tailwind CSS</p>
               <img
                 src={CaretDownIcon}
@@ -370,7 +366,7 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+            <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
               <img src={TailwindIcon} alt="Tailwind CSS Icon" />
             </div>
           </motion.div>
@@ -391,8 +387,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedPhp(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedPhp ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedPhp ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>PHP</p>
               <img
@@ -402,7 +397,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+              className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                 isTouchedPhp ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -420,7 +415,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="group relative hidden flex-col items-center md:flex"
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
               <p>PHP</p>
               <img
                 src={CaretDownIcon}
@@ -428,7 +423,7 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+            <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
               <img src={PhpIcon} alt="PHP Icon" />
             </div>
           </motion.div>
@@ -449,8 +444,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedNode(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedNode ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedNode ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>Node JS</p>
               <img
@@ -460,7 +454,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+              className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                 isTouchedNode ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -478,7 +472,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="group relative hidden flex-col items-center md:flex"
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
               <p>Node JS</p>
               <img
                 src={CaretDownIcon}
@@ -486,7 +480,7 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+            <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
               <img src={NodeJsIcon} alt="Node Js Icon" />
             </div>
           </motion.div>
@@ -507,8 +501,7 @@ export default function Experience() {
             onTouchEnd={() => setIsTouchedReact(false)}
           >
             <span
-              className={`absolute -top-1 -translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150
-          ${isTouchedReact ? "-translate-y-10 opacity-100 delay-150" : ""}`}
+              className={`absolute -top-1 flex -translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150 ${isTouchedReact ? "-translate-y-10 opacity-100 delay-150" : ""}`}
             >
               <p>React JS</p>
               <img
@@ -518,7 +511,7 @@ export default function Experience() {
               />
             </span>
             <div
-              className={`w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out] ${
+              className={`z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5 ${
                 isTouchedReact ? "animate-[scaleIn_0.3s_ease-in-out]" : ""
               }`}
             >
@@ -536,7 +529,7 @@ export default function Experience() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="group relative hidden flex-col items-center md:flex"
           >
-            <span className="absolute -top-1 translate-y-0 flex flex-col items-center justify-center opacity-0 transition duration-300 group-hover:-translate-y-10 group-hover:z-10 group-hover:opacity-100 group-hover:delay-150">
+            <span className="absolute -top-1 flex translate-y-0 flex-col items-center justify-center opacity-0 transition duration-300 group-hover:z-10 group-hover:-translate-y-10 group-hover:opacity-100 group-hover:delay-150">
               <p>React JS</p>
               <img
                 src={CaretDownIcon}
@@ -544,14 +537,14 @@ export default function Experience() {
                 className="invert-100"
               />
             </span>
-            <div className="w-28 h-28 flex items-center justify-center p-4 cursor-pointer rounded z-10 border-1 shadow-md transition duration-150 border-slate-900 shadow-slate-900 bg-gray-700 md:p-5 md:w-32 md:h-32 group-hover:animate-[scaleIn_0.3s_ease-in-out]">
+            <div className="z-10 flex h-28 w-28 cursor-pointer items-center justify-center rounded border-1 border-slate-900 bg-gray-700 p-4 shadow-md shadow-slate-900 transition duration-150 group-hover:animate-[scaleIn_0.3s_ease-in-out] md:h-32 md:w-32 md:p-5">
               <img src={ReactIcon} alt="React Icon" />
             </div>
           </motion.div>
         </div>
       </div>
 
-      <div className="pt-12 mt-10" id="experience">
+      <div className="mt-10 pt-12" id="experience">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
@@ -559,7 +552,7 @@ export default function Experience() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs text-center text-cyan-500">Experience</p>
+          <p className="text-center text-xs text-cyan-500">Experience</p>
         </motion.div>
 
         <motion.div
@@ -570,8 +563,8 @@ export default function Experience() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="text-3xl font-bold text-center mb-5 md:text-6xl">
-            🏢Work Experiences
+          <h1 className="mb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+            🏢 Work Experiences
           </h1>
         </motion.div>
 
@@ -583,7 +576,7 @@ export default function Experience() {
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="w-[95%] mx-auto text-slate-500 text-center pb-20 text-sm md:text-base lg:w-1/2">
+          <p className="mx-auto w-[95%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2">
             Combining technical expertise with practical application, I have
             successfully contributed to various roles, leveraging my skills in
             computer engineering, networking, and web development to drive
@@ -591,7 +584,7 @@ export default function Experience() {
           </p>
         </motion.div>
 
-        <div className="w-[95%] mx-auto flex flex-col items-center justify-center gap-10">
+        <div className="flex flex-col items-center justify-center gap-10">
           {/* BNN Tangsel */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -600,31 +593,31 @@ export default function Experience() {
               y: hasAnimatedExp2 ? 0 : 50,
             }}
             transition={{ duration: 0.5 }}
-            className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-cyan-600 to-cyan-900 flex flex-col items-start justify-center md:flex-row"
+            className="flex w-full flex-col items-start justify-center rounded-2xl border-4 border-cyan-400 bg-gradient-to-tl from-cyan-600 to-cyan-900 md:flex-row"
           >
-            <div className="flex justify-center items-start mt-7 w-[25%]">
+            <div className="mt-7 flex w-[25%] items-start justify-center">
               <img
-                className="object-cover w-20 ml-10 md:m-0 md:w-32"
+                className="ml-10 w-20 object-cover md:m-0 md:w-32"
                 src={Bnn}
                 alt="Bnn Tangsel"
               />
             </div>
             <div className="w-full py-8 md:w-[75%]">
-              <div className="flex justify-between items-center mx-auto w-[90%] md:w-[95%] md:ml-0">
+              <div className="mx-auto flex w-[90%] items-center justify-between md:ml-0 md:w-[95%]">
                 <div className="flex flex-col justify-start">
-                  <h1 className="text-4xl font-bold -mb-1">BNN</h1>
+                  <h1 className="-mb-1 text-4xl font-bold">BNN</h1>
                   <h3 className="font-semibold">@infobnn_ri</h3>
-                  <p className="font-bold my-2">Jan 2023 - Feb 2023</p>
+                  <p className="my-2 font-bold">Jan 2023 - Feb 2023</p>
                 </div>
-                <span className="px-6 py-3 text-xs font-semibold rounded-lg bg-cyan-950 opacity-90 md:text-sm md:py-4 md:px-9">
+                <span className="rounded-lg bg-cyan-950 px-6 py-3 text-xs font-semibold opacity-90 md:px-9 md:py-4 md:text-sm">
                   IT Support
                 </span>
               </div>
-              <div className="w-[90%] mx-auto flex flex-col md:ml-0 md:w-[95%]">
-                <h3 className="font-medium text-2xl">
+              <div className="mx-auto flex w-[90%] flex-col md:ml-0 md:w-[95%]">
+                <h3 className="text-2xl font-medium">
                   The responsibilities include:
                 </h3>
-                <ul className="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug">
+                <ul className="mt-2 flex list-disc flex-col gap-2 pl-4 leading-snug">
                   <li>Carry out WiFi repairs for all rooms</li>
                   <li>Training is part of intelligence members</li>
                   <li>Help sort the suspect&apos;s track record files</li>
@@ -645,31 +638,31 @@ export default function Experience() {
               y: hasAnimatedExp3 ? 0 : 50,
             }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="border-4 border-cyan-400 rounded-2xl w-full bg-gradient-to-tl from-sky-800 to-cyan-600 flex flex-col items-start justify-center md:flex-row"
+            className="flex w-full flex-col items-start justify-center rounded-2xl border-4 border-cyan-400 bg-gradient-to-tl from-sky-800 to-cyan-600 md:flex-row"
           >
-            <div className="flex justify-center items-start mt-7 w-[25%]">
+            <div className="mt-7 flex w-[25%] items-start justify-center">
               <img
-                className="object-cover w-20 ml-10 md:m-0 md:w-32"
+                className="ml-10 w-20 object-cover md:m-0 md:w-32"
                 src={Bsa}
                 alt="Bsa Land"
               />
             </div>
             <div className="w-full py-8 md:w-[75%]">
-              <div className="flex justify-between items-center mx-auto w-[90%] md:w-[95%] md:ml-0">
+              <div className="mx-auto flex w-[90%] items-center justify-between md:ml-0 md:w-[95%]">
                 <div className="flex flex-col justify-start">
-                  <h1 className="text-4xl font-bold -mb-1">BSA Land</h1>
+                  <h1 className="-mb-1 text-4xl font-bold">BSA Land</h1>
                   <h3 className="font-semibold">@bsalandofficial</h3>
-                  <p className="font-bold my-2">Feb 2023 - March 2023</p>
+                  <p className="my-2 font-bold">Feb 2023 - March 2023</p>
                 </div>
-                <span className="px-6 py-3 text-xs font-semibold rounded-lg bg-cyan-950 opacity-90 md:text-sm md:py-4 md:px-9">
+                <span className="rounded-lg bg-cyan-950 px-6 py-3 text-xs font-semibold opacity-90 md:px-9 md:py-4 md:text-sm">
                   IT Support
                 </span>
               </div>
-              <div className="w-[90%] mx-auto flex flex-col md:ml-0 md:w-[95%]">
-                <h3 className="font-medium text-2xl">
+              <div className="mx-auto flex w-[90%] flex-col md:ml-0 md:w-[95%]">
+                <h3 className="text-2xl font-medium">
                   The responsibilities include:
                 </h3>
-                <ul className="list-disc pl-4 flex flex-col gap-2 mt-2 leading-snug">
+                <ul className="mt-2 flex list-disc flex-col gap-2 pl-4 leading-snug">
                   <li>Create networks within the office</li>
                   <li>Carry out maintenance of office equipment</li>
                   <li>Analyze server hardware that is in trouble</li>

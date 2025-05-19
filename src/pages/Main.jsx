@@ -6,7 +6,7 @@ import Projects from "../components/Projects";
 import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import { Noise } from "../components/animation/Animation";
+// import { Noise } from "../components/animation/Animation";
 import "../input.css";
 
 export default function Main() {
@@ -37,25 +37,15 @@ export default function Main() {
   };
 
   return (
-    <div>
-      <div className="fixed top-0 left-0 w-full h-screen pointer-events-none -z-10">
-        <Noise
-          patternSize={250}
-          patternScaleX={1}
-          patternScaleY={1}
-          patternRefreshInterval={2}
-          patternAlpha={20}
-        />
-      </div>
+    <div className="relative text-white">
+      <Navbar sections={sections} />
 
-      <div className="relative text-white">
-        <Navbar sections={sections} />
-
+      <div className="mx-5 sm:mx-7 md:mx-10">
         {/* Profile Section */}
         <section
           ref={profileRef}
           id="profile"
-          className="w-[90%] flex flex-col items-center justify-center mx-auto pt-28 gap-4 lg:flex-row lg:gap-0"
+          className="flex flex-col items-center justify-center gap-4 pt-28 lg:flex-row lg:gap-0"
         >
           <Profile handleContactClick={handleContactClick} />
         </section>
@@ -64,7 +54,7 @@ export default function Main() {
         <section
           ref={aboutRef}
           id="about"
-          className="flex flex-col items-center justify-between pt-28 my-5 text-white md:flex-row"
+          className="my-5 flex flex-col items-center justify-between pt-28 text-white md:flex-row"
         >
           <About />
         </section>
@@ -83,12 +73,12 @@ export default function Main() {
         <section ref={contactRef} id="contact" className="w-full pt-18">
           <Contact />
         </section>
-
-        <Footer
-          handleContactClick={handleContactClick}
-          handleProfileClick={handleProfileClick}
-        />
       </div>
+
+      <Footer
+        handleContactClick={handleContactClick}
+        handleProfileClick={handleProfileClick}
+      />
     </div>
   );
 }
