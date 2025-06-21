@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "../input.css";
 import Bnn from "../assets/Experience/bnnTangsel.png";
 import Bsa from "../assets/Experience/bsaLand.png";
 import HtmlIcon from "../assets/Experience/skills/Html.svg";
@@ -50,11 +49,11 @@ export default function Experience() {
         settriggerExp3(2740);
       } else {
         // Desktop
-        setTriggerPoint(1300);
-        setTriggerSkill(1470);
-        settriggerExp1(1800);
-        settriggerExp2(1900);
-        settriggerExp3(2400);
+        setTriggerPoint(1620);
+        setTriggerSkill(1800);
+        settriggerExp1(2030);
+        settriggerExp2(2300);
+        settriggerExp3(2500);
       }
     };
 
@@ -550,7 +549,7 @@ export default function Experience() {
           animate={{
             opacity: hasAnimatedExp1 ? 1 : 0,
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
           <p className="text-center text-xs text-cyan-500">Experience</p>
         </motion.div>

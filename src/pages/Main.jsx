@@ -7,7 +7,6 @@ import Experience from "../components/Experience";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 // import { Noise } from "../components/animation/Animation";
-import "../input.css";
 
 export default function Main() {
   const profileRef = useRef(null);

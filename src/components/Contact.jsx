@@ -27,8 +27,8 @@ export default function Contact() {
         setTriggerForm(3520);
       } else {
         // Desktop
-        setTriggerPoint(2950);
-        setTriggerForm(3150);
+        setTriggerPoint(3220);
+        setTriggerForm(3380);
       }
     };
 
@@ -116,7 +116,7 @@ export default function Contact() {
           animate={{
             opacity: hasAnimated ? 1 : 0,
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
           <h5 className="text-center text-xs font-semibold text-cyan-500">
             Contact
@@ -331,7 +331,7 @@ export default function Contact() {
                     onMouseLeave={() => setIsVisible(false)}
                     onMouseMove={handleMouseMove}
                     type="submit"
-                    className="btnKirim h-12 w-full cursor-pointer rounded-full bg-cyan-500 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg"
+                    className="btnKirim h-12 w-full cursor-pointer rounded-full bg-cyan-500 px-8 text-base font-semibold text-white transition duration-300 hover:opacity-80 hover:shadow-lg"
                     disabled={isSending}
                   >
                     <span

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import "../input.css";
 
 export default function Navbar({ sections }) {
   const [active, setActive] = useState("Profile");

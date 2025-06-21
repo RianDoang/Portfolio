@@ -32,7 +32,7 @@ export default function Projects() {
         settriggerProject(890);
       } else {
         // Desktop
-        setTriggerPoint(650);
+        setTriggerPoint(600);
         settriggerProject(850);
       }
     };
@@ -109,7 +109,7 @@ export default function Projects() {
           animate={{
             opacity: hasAnimated ? 1 : 0,
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
           <h5 className="text-xs font-semibold text-cyan-500">Projects</h5>
         </motion.div>
