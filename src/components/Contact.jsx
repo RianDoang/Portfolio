@@ -77,10 +77,10 @@ export default function Contact() {
     setIsSending(true);
     try {
       await emailjs.sendForm(
-        "service_zik0kzm",
-        "template_p921x97",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "QG2TZtjMy86-9GdFM",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       setIsSent(true);

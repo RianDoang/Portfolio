@@ -35,7 +35,7 @@ export default function Experience() {
     const updateTriggers = () => {
       if (window.innerWidth < 768) {
         // Mobile
-        setTriggerPoint(1690);
+        setTriggerPoint(2000);
         setTriggerSkill(1915);
         settriggerExp1(2675);
         settriggerExp2(3030);

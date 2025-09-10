@@ -15,7 +15,7 @@ export default function About() {
     const updateTriggers = () => {
       if (window.innerWidth < 768) {
         // Mobile
-        setTriggerPoint(240);
+        setTriggerPoint(200);
       } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
         // Tablet
         setTriggerPoint(200);
