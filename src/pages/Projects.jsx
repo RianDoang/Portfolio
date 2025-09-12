@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import JsIcon from "../assets/Experience/skills/Js.svg";
-import PhpIcon from "../assets/Experience/skills/Php.svg";
-import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
-import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
+// import JsIcon from "../assets/Experience/skills/Js.svg";
+// import PhpIcon from "../assets/Experience/skills/Php.svg";
+// import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
+// import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 import QRProject from "../assets/projects/QRMe.png";
 import RYStore from "../assets/projects/RealmYoke-Store.png";
 import RYGames from "../assets/projects/RealmYoke-Games.png";
 import FollGone from "../assets/projects/FollGone.png";
+import Container from "../components/Container";
 
 export default function Projects() {
-  const [isTouchedQR, setIsTouchedQR] = useState(false);
-  const [isTouchedRYS, setIsTouchedRYS] = useState(false);
-  const [isTouchedRYG, setIsTouchedRYG] = useState(false);
-  const [isTouchedFG, setIsTouchedFG] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
   const [triggerPoint, setTriggerPoint] = useState(false);
@@ -64,28 +61,32 @@ export default function Projects() {
       imgSrc: QRProject,
       imgAlt: "QRMe Projects",
       title: "QR Generate",
-      technologies: [TailwindIcon, JsIcon],
+      description:
+        "Website untuk membuat text atau link custom menjadi sebuah QR code dengan mudah dan dapat digunakan secara praktis oleh siapapun.",
     },
     {
       href: "https://riandoang.github.io/RealmYoke-Store/",
       imgSrc: RYStore,
       imgAlt: "RealmYoke Store Projects",
       title: "RealmYoke Store",
-      technologies: [TailwindIcon, ReactIcon, PhpIcon],
+      description:
+        "Platform e-commerce yang menyediakan top-up items game online secara aman, cepat, dan murah dengan pengalaman berbelanja yang nyaman.",
     },
     {
       href: "https://riandoang.github.io/RealmYoke-Games/",
       imgSrc: RYGames,
       imgAlt: "RealmYoke Games Projects",
       title: "RealmYoke Games",
-      technologies: [TailwindIcon, ReactIcon],
+      description:
+        "Platform yang menyediakan tempat berbagai game yang dapat diunduh secara gratis dan mudah digunakan.",
     },
     {
       href: "https://follgone.vercel.app/",
       imgSrc: FollGone,
       imgAlt: "FollGone Projects",
       title: "FollGone",
-      technologies: [TailwindIcon, ReactIcon],
+      description:
+        "Platform berguna untuk melihat siapa saja yang belum anda ikuti balik ataupun orang yang tidak mengikuti anda di Instagram secara aman dan praktis.",
     },
   ];
 
@@ -99,7 +100,7 @@ export default function Projects() {
   };
 
   return (
-    <>
+    <Container>
       <div
         id="projects-section"
         className="flex flex-col items-center justify-center"
@@ -122,7 +123,7 @@ export default function Projects() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="pb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+          <h1 className="pb-5 text-center text-3xl font-semibold text-gray-100 sm:text-5xl md:text-6xl">
             🚀 Highlight Projects
           </h1>
         </motion.div>
@@ -134,7 +135,7 @@ export default function Projects() {
             y: hasAnimated ? 0 : 30,
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-[90%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2"
+          className="w-[90%] pb-20 text-center text-sm text-gray-500 sm:text-base lg:w-1/2"
         >
           <p>
             Demonstrating my ability to turn complex technical requirements into
@@ -159,48 +160,38 @@ export default function Projects() {
             }}
             transition={{ duration: 0.3, delay: index * 0.2 }}
             className="flex w-full items-center justify-center"
-            onTouchStart={() => {
-              if (index === 0) setIsTouchedQR(true);
-              if (index === 1) setIsTouchedRYS(true);
-              if (index === 2) setIsTouchedRYG(true);
-              if (index === 3) setIsTouchedFG(true);
-            }}
-            onTouchEnd={() => {
-              if (index === 0) setIsTouchedQR(false);
-              if (index === 1) setIsTouchedRYS(false);
-              if (index === 2) setIsTouchedRYG(false);
-              if (index === 3) setIsTouchedFG(false);
-            }}
           >
-            <div
-              className={`flex w-[90%] flex-col justify-center rounded bg-slate-900 p-2 transition duration-150 lg:w-auto ${
-                (index === 0 && isTouchedQR) ||
-                (index === 1 && isTouchedRYS) ||
-                (index === 2 && isTouchedRYG) ||
-                (index === 3 && isTouchedFG)
-                  ? "scale-[1.03] shadow-lg shadow-slate-700"
-                  : "shadow-sm shadow-slate-800 hover:scale-[1.03] hover:shadow-lg hover:shadow-slate-700"
-              }`}
-            >
-              <img
-                className="mb-3 rounded-sm"
-                src={project.imgSrc}
-                alt={project.imgAlt}
-              />
-              <h3 className="mb-1 ml-2 text-xl font-semibold">
-                {project.title}
-              </h3>
-              <p className="my-2 ml-2 flex items-center gap-2 text-sm">
-                Technology:
-                {project.technologies.map((tech, techIndex) => (
-                  <img
-                    key={techIndex}
-                    src={tech}
-                    alt="Technology Icon"
-                    className="h-5 w-5"
-                  />
-                ))}
-              </p>
+            <div className="flex w-[95%] flex-col justify-center overflow-hidden rounded-lg border border-gray-700 bg-gray-900 transition duration-150 lg:w-auto">
+              <img className="" src={project.imgSrc} alt={project.imgAlt} />
+
+              <div className="flex flex-col items-start gap-4 p-5 text-gray-100">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <p className="line-clamp-3 text-sm text-gray-400">
+                  {project.description}
+                </p>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  className="flex items-center justify-center rounded bg-cyan-500 px-3 py-2 text-sm transition duration-100 hover:bg-cyan-600"
+                >
+                  Read more
+                  <svg
+                    className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </motion.a>
         ))}
@@ -220,29 +211,8 @@ export default function Projects() {
                 }}
                 transition={{ duration: 0.3, delay: index * 0.2 }}
                 className="flex w-full items-center justify-center"
-                onTouchStart={() => {
-                  if (index === 0) setIsTouchedQR(true);
-                  if (index === 1) setIsTouchedRYS(true);
-                  if (index === 2) setIsTouchedRYG(true);
-                  if (index === 3) setIsTouchedFG(true);
-                }}
-                onTouchEnd={() => {
-                  if (index === 0) setIsTouchedQR(false);
-                  if (index === 1) setIsTouchedRYS(false);
-                  if (index === 2) setIsTouchedRYG(false);
-                  if (index === 3) setIsTouchedFG(false);
-                }}
               >
-                <div
-                  className={`flex w-4/5 flex-col justify-center rounded bg-slate-900 p-2 transition duration-150 lg:w-auto ${
-                    (index === 0 && isTouchedQR) ||
-                    (index === 1 && isTouchedRYS) ||
-                    (index === 2 && isTouchedRYG) ||
-                    (index === 3 && isTouchedFG)
-                      ? "scale-[1.03] shadow-lg shadow-slate-700"
-                      : "shadow-sm shadow-slate-800 hover:scale-[1.03] hover:shadow-lg hover:shadow-slate-700"
-                  }`}
-                >
+                <div className="flex w-4/5 flex-col justify-center rounded bg-slate-900 p-2 transition duration-150 lg:w-auto">
                   <img
                     className="mb-3 rounded-sm"
                     src={project.imgSrc}
@@ -252,15 +222,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p className="my-2 ml-2 flex items-center gap-2 text-sm">
-                    Technology:
-                    {project.technologies.map((tech, techIndex) => (
-                      <img
-                        key={techIndex}
-                        src={tech}
-                        alt="Technology Icon"
-                        className="h-5 w-5"
-                      />
-                    ))}
+                    {project.description}
                   </p>
                 </div>
               </motion.a>
@@ -281,6 +243,6 @@ export default function Projects() {
           <div className="h-[0.5px] flex-grow bg-slate-500/50"></div>
         </div>
       )}
-    </>
+    </Container>
   );
 }

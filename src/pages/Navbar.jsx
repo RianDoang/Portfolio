@@ -97,24 +97,24 @@ export default function Navbar({ sections }) {
 
   return (
     <nav
-      className="absolute top-0 w-full h-[70px] z-50 flex items-center justify-center transition-all duration-300 md:sticky"
+      className="absolute top-0 z-50 flex h-[70px] w-full items-center justify-center transition-all duration-300 md:sticky"
       style={{ transform: transformStyle }}
     >
-      <div className="mx-4 z-10 flex items-center w-full justify-between">
+      <div className="z-10 mx-4 flex w-full items-center justify-between">
         <span className="md:hidden">
-          <p className="cursor-default font-semibold text-xl text-white">
+          <p className="cursor-default text-xl font-semibold text-white">
             Rian
           </p>
         </span>
         <div
           id="hamburgerMenu"
           ref={hamburgerMenuRef}
-          className="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
+          className="flex cursor-pointer flex-col gap-1.5 p-2 md:hidden"
           onClick={toggleNavMenu}
         >
-          <span className="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-cyan-500"></span>
-          <span className="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-cyan-500"></span>
-          <span className="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-cyan-500"></span>
+          <span className="flex h-[3px] w-4 origin-top-left rounded-sm bg-cyan-500 transition duration-300 ease-in-out"></span>
+          <span className="flex h-[3px] w-5 rounded-sm bg-cyan-500 transition duration-300 ease-in-out"></span>
+          <span className="flex h-[3px] w-6 origin-bottom-left rounded-sm bg-cyan-500 transition duration-300 ease-in-out"></span>
         </div>
       </div>
 
@@ -126,30 +126,28 @@ export default function Navbar({ sections }) {
           y: 0,
         }}
         transition={{ duration: 0.5 }}
-        className="md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2"
+        className="md:relative md:right-1/2 md:flex md:w-auto md:translate-x-1/2"
       >
         <div
           id="navMenu"
           ref={navMenuRef}
-          className={`absolute top-16 right-5 w-48 shadow-lg shadow-slate-700 bg-slate-200 rounded-xl py-3 transition-all duration-200 ease-in-out md:top-10 md:flex md:w-auto md:relative md:right-1/2 md:translate-x-1/2 md:px-7 md:rounded-full md:translate-y-0 md:opacity-100 md:shadow-none md:bg-slate-100
-          hidden -translate-y-4 opacity-0
-          ${shadowStyle}`}
+          className={`absolute top-16 right-5 hidden w-48 -translate-y-4 rounded-xl bg-slate-200 py-3 opacity-0 shadow-lg shadow-slate-700 transition-all duration-200 ease-in-out md:relative md:top-10 md:right-1/2 md:flex md:w-auto md:translate-x-1/2 md:translate-y-0 md:rounded-full md:bg-slate-100 md:px-7 md:opacity-100 md:shadow-none ${shadowStyle}`}
         >
-          <ul className="w-full block md:flex md:justify-between">
+          <ul className="block w-full md:flex md:justify-between">
             {sections.map((section) => (
               <li
                 key={section.name}
                 className={`transition duration-150 ${
                   active === section.name
-                    ? "text-cyan-500 font-medium transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
+                    ? "font-medium text-cyan-500 transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent"
                     : active === "Profile"
-                    ? "transition duration-150 text-slate-950 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
-                    : "transition duration-150 text-slate-950/60 hover:bg-gray-300 md:m-0 md:px-4 md:hover:text-cyan-500 font-medium md:hover:bg-transparent"
+                      ? "font-medium text-slate-950 transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent md:hover:text-cyan-500"
+                      : "font-medium text-slate-950/60 transition duration-150 hover:bg-gray-300 md:m-0 md:px-4 md:hover:bg-transparent md:hover:text-cyan-500"
                 }`}
               >
                 <a
                   href={`#${section.name.toLowerCase()}`}
-                  className="flex pl-4 py-2 text-base md:pl-0"
+                  className="flex py-2 pl-4 text-base md:pl-0"
                   onClick={(e) => handleClick(e, section)}
                 >
                   {section.name}
@@ -170,6 +168,6 @@ Navbar.propTypes = {
       ref: PropTypes.shape({
         current: PropTypes.instanceOf(Element),
       }).isRequired,
-    })
+    }),
   ).isRequired,
 };

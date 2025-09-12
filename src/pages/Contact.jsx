@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Ripples from "react-ripples";
 import emailjs from "@emailjs/browser";
+import Container from "../components/Container";
 
 export default function Contact() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -109,7 +110,7 @@ export default function Contact() {
     isVisible ? "animate-fadeIn" : "animate-fadeOut";
 
   return (
-    <>
+    <Container>
       <div className="py-10">
         <motion.div
           initial={{ opacity: 0 }}
@@ -131,7 +132,7 @@ export default function Contact() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="pb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+          <h1 className="pb-5 text-center text-3xl font-semibold text-gray-100 sm:text-5xl md:text-6xl">
             👋 Let&apos;s get in!
           </h1>
         </motion.div>
@@ -144,7 +145,7 @@ export default function Contact() {
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="mx-auto w-[90%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2">
+          <p className="mx-auto w-[90%] pb-20 text-center text-sm text-gray-500 sm:text-base lg:w-1/2">
             Feel free to reach out if you’re interested in collaborating on a
             project, have any questions, or just want to connect. I’m always
             open to new opportunities and conversations!
@@ -386,6 +387,6 @@ export default function Contact() {
           </div>
         </form>
       </div>
-    </>
+    </Container>
   );
 }

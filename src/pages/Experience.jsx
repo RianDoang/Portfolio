@@ -10,6 +10,7 @@ import TailwindIcon from "../assets/Experience/skills/Tailwind.svg";
 import NodeJsIcon from "../assets/Experience/skills/NodeJs.svg";
 import ReactIcon from "../assets/Experience/skills/ReactJs.svg";
 import CaretDownIcon from "../assets/Experience/skills/CaretDown.svg";
+import Container from "../components/Container";
 
 export default function Experience() {
   const [isTouchedHtml, setIsTouchedHtml] = useState(false);
@@ -102,7 +103,7 @@ export default function Experience() {
   ]);
 
   return (
-    <>
+    <Container>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{
@@ -111,7 +112,7 @@ export default function Experience() {
         }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="mb-5 text-left text-3xl font-semibold sm:text-5xl md:text-6xl">
+        <h1 className="mb-5 text-left text-3xl font-semibold text-gray-100 sm:text-5xl md:text-6xl">
           🎯 Specialized Skills
         </h1>
       </motion.div>
@@ -124,7 +125,7 @@ export default function Experience() {
         }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <p className="pb-20 text-justify text-sm text-slate-500 sm:text-base md:text-left lg:w-1/2">
+        <p className="pb-20 text-justify text-sm text-gray-400 sm:text-base md:text-left lg:w-1/2">
           With a solid foundation in both hardware and software, I excel in
           integrating comprehensive technical knowledge with practical
           applications to deliver robust and efficient solutions.
@@ -562,7 +563,7 @@ export default function Experience() {
           }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <h1 className="mb-5 text-center text-3xl font-semibold sm:text-5xl md:text-6xl">
+          <h1 className="mb-5 text-center text-3xl font-semibold text-gray-100 sm:text-5xl md:text-6xl">
             🏢 Work Experiences
           </h1>
         </motion.div>
@@ -575,7 +576,7 @@ export default function Experience() {
           }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="mx-auto w-[95%] pb-20 text-center text-sm text-slate-500 sm:text-base lg:w-1/2">
+          <p className="mx-auto w-[95%] pb-20 text-center text-sm text-gray-400 sm:text-base lg:w-1/2">
             Combining technical expertise with practical application, I have
             successfully contributed to various roles, leveraging my skills in
             computer engineering, networking, and web development to drive
@@ -679,6 +680,6 @@ export default function Experience() {
           </motion.div>
         </div>
       </div>
-    </>
+    </Container>
   );
 }
